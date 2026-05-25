@@ -239,12 +239,35 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   padding-bottom: var(--space-lg);
 }
 
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-18deg); }
+  40%  { transform: rotate(14deg); }
+  60%  { transform: rotate(-9deg); }
+  80%  { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes wiggle-hover {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-18deg); }
+  40%  { transform: rotate(14deg); }
+  60%  { transform: rotate(-9deg); }
+  80%  { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
 .hero__star {
   width: 56px;
   height: 56px;
   object-fit: contain;
   display: block;
   margin-bottom: 24px;
+  transform-origin: center center;
+  animation: wiggle 0.7s ease-in-out;
+  cursor: default;
+}
+.hero__star:hover {
+  animation: wiggle-hover 0.7s ease-in-out;
 }
 
 .hero__statement {
@@ -358,7 +381,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 .card__title {
   font-size: var(--text-lg);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--color-text);
   margin-bottom: 5px;
