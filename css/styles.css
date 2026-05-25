@@ -567,7 +567,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 .about-label {
   font-size: clamp(18px, 2vw, 22px);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-text);
   line-height: 1.75;
   margin-bottom: var(--space-lg);
@@ -582,6 +582,9 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   color: var(--color-text);
   line-height: 1.75;
   margin-bottom: var(--space-md);
+}
+.about-bio .about-label {
+  font-weight: 400;
 }
 
 .about-skills {
