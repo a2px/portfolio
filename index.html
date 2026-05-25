@@ -21,7 +21,6 @@
       </button>
       <ul class="nav__links" role="list">
         <li><a href="index.html" class="nav__link active">Home</a></li>
-        <li><a href="work.html" class="nav__link">Work</a></li>
         <li><a href="about.html" class="nav__link">About</a></li>
       </ul>
     </div>
@@ -31,26 +30,14 @@
     <!-- ── Hero ───────────────────────────────────────────────── -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
-        <p class="hero__eyebrow">Product Designer</p>
-        <h1 class="hero__name" id="hero-heading">Ashley Xie<span>.</span></h1>
-        <p class="hero__headline">
-          Ashley is a product designer who reframes complex challenges with analytical
-          UX&nbsp;research methodology to create simplified solutions for high-stakes
-          proptech flows, prioritizing both craft and business impact.
+        <p class="hero__statement" id="hero-heading">
+          <strong class="hl-blue">Ashley Xie</strong> is a
+          <strong class="hl-green">product designer</strong> from
+          <strong class="hl-red">Dartmouth College</strong> who reframes complex challenges
+          with analytical UX&nbsp;research methodology to create simplified solutions
+          for high-stakes <strong class="hl-navy">proptech</strong> flows,
+          prioritizing both craft and business impact.
         </p>
-        <div class="hero__cta">
-          <a href="work.html" class="btn btn--primary">
-            View My Work
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="about.html" class="btn btn--ghost">About Me</a>
-        </div>
-        <div class="scroll-hint" aria-hidden="true">
-          <span class="scroll-hint__line"></span>
-          Selected Work Below
-        </div>
       </div>
     </section>
 
@@ -62,41 +49,13 @@
             <p class="section-label">Portfolio</p>
             <h2 class="section-title" id="projects-heading">Selected Work</h2>
           </div>
-          <a href="work.html" class="btn btn--ghost" style="white-space: nowrap;">View All Projects</a>
         </div>
 
         <div class="projects__grid">
 
-          <!-- Card 1 — UI/UX Capstone -->
+          <!-- Card 1 — Lennar -->
           <article class="card">
-            <a href="#" class="card__link" aria-label="View UI/UX Capstone case study">
-              <div class="card__thumb card__thumb--1">
-                <img src="images/projects/capstone.jpg" alt="UI/UX Capstone project screenshot" loading="lazy" />
-              </div>
-              <div class="card__body">
-                <div class="card__tags">
-                  <span class="tag">UX Research</span>
-                  <span class="tag">UI Design</span>
-                  <span class="tag">Capstone</span>
-                </div>
-                <h3 class="card__title">UI/UX Capstone</h3>
-                <p class="card__desc">
-                  A comprehensive capstone project applying human-centered design principles
-                  to solve a complex user problem from research through final prototype.
-                </p>
-                <span class="card__arrow">
-                  View Case Study
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </div>
-            </a>
-          </article>
-
-          <!-- Card 2 — Lennar -->
-          <article class="card">
-            <a href="#" class="card__link" aria-label="View Lennar Investor Marketplace case study">
+            <a href="lennar.html" class="card__link" aria-label="View Lennar Investor Marketplace case study">
               <div class="card__thumb card__thumb--2">
                 <img src="images/projects/lennar.jpg" alt="Lennar Investor Marketplace dashboard screenshot" loading="lazy" />
               </div>
@@ -111,19 +70,13 @@
                   Designed a marketplace platform that gained 6,500+ users and drove $64M+
                   in new revenue for Lennar within the first two months of launch.
                 </p>
-                <span class="card__arrow">
-                  View Case Study
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
               </div>
             </a>
           </article>
 
-          <!-- Card 3 — Dreamfinders -->
+          <!-- Card 2 — Dreamfinders -->
           <article class="card">
-            <a href="#" class="card__link" aria-label="View Dreamfinders Custom Marketplace case study">
+            <a href="dreamfinders.html" class="card__link" aria-label="View Dreamfinders Custom Marketplace case study">
               <div class="card__thumb card__thumb--3">
                 <img src="images/projects/dreamfinders.jpg" alt="Dreamfinders Custom Marketplace interface screenshot" loading="lazy" />
               </div>
@@ -138,19 +91,13 @@
                   A tailored marketplace experience designed around Dreamfinders' home
                   buying and customization flow, simplifying high-stakes decisions for buyers.
                 </p>
-                <span class="card__arrow">
-                  View Case Study
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
               </div>
             </a>
           </article>
 
-          <!-- Card 4 — Locate Alpha -->
+          <!-- Card 3 — Locate Alpha -->
           <article class="card">
-            <a href="#" class="card__link" aria-label="View Locate Alpha Corporate Website case study">
+            <a href="locate-alpha.html" class="card__link" aria-label="View Locate Alpha Corporate Website case study">
               <div class="card__thumb card__thumb--4">
                 <img src="images/projects/locate-alpha.jpg" alt="Locate Alpha Corporate Website redesign screenshot" loading="lazy" />
               </div>
@@ -165,12 +112,27 @@
                   A corporate website redesign that balances brand storytelling with
                   clear UX, now attracting 1,100+ monthly visitors.
                 </p>
-                <span class="card__arrow">
-                  View Case Study
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 4 — UI/UX Capstone -->
+          <article class="card">
+            <a href="capstone.html" class="card__link" aria-label="View UI/UX Capstone case study">
+              <div class="card__thumb card__thumb--1">
+                <img src="images/projects/capstone.jpg" alt="UI/UX Capstone project screenshot" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <div class="card__tags">
+                  <span class="tag">UX Research</span>
+                  <span class="tag">UI Design</span>
+                  <span class="tag">Capstone</span>
+                </div>
+                <h3 class="card__title">UI/UX Capstone</h3>
+                <p class="card__desc">
+                  A comprehensive capstone project applying human-centered design principles
+                  to solve a complex user problem from research through final prototype.
+                </p>
               </div>
             </a>
           </article>
@@ -190,7 +152,6 @@
         </div>
         <nav class="footer__nav" aria-label="Footer navigation">
           <a href="index.html" class="footer__nav-link">Home</a>
-          <a href="work.html" class="footer__nav-link">Work</a>
           <a href="about.html" class="footer__nav-link">About</a>
         </nav>
         <a

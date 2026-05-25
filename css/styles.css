@@ -231,53 +231,26 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   padding-bottom: var(--space-2xl);
 }
 
-.hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: var(--text-sm);
-  font-weight: 400;
-  color: var(--color-accent);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-md);
-}
-.hero__eyebrow::before {
-  content: '';
-  width: 20px; height: 2px;
-  background: var(--color-accent);
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-.hero__name {
-  font-size: clamp(52px, 7vw, 84px);
-  font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  color: var(--color-text);
-  margin-bottom: var(--space-md);
-}
-/* accent dot on name */
-.hero__name span {
-  color: var(--color-accent);
-}
-
-.hero__headline {
-  font-size: clamp(var(--text-base), 2vw, var(--text-md));
+.hero__statement {
+  font-size: 40px;
   font-weight: 300;
   color: var(--color-text-muted);
-  line-height: 1.75;
-  max-width: 660px;
-  margin-bottom: var(--space-lg);
+  line-height: 1.26;
+  max-width: 900px;
 }
 
-.hero__cta {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
+/* highlighted keywords */
+.hl-blue,
+.hl-green,
+.hl-red,
+.hl-navy {
+  font-weight: 600;
+  font-style: normal;
 }
+.hl-blue  { color: #274CAB; }
+.hl-green { color: #AAC864; }
+.hl-red   { color: #BF3E3E; }
+.hl-navy  { color: #1c3a87; }
 
 /* ============================================================
    PROJECTS SECTION
@@ -476,6 +449,11 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   grid-template-columns: 1fr 420px;
   gap: 80px;
   align-items: start;
+}
+
+.about-grid--single {
+  grid-template-columns: 1fr;
+  max-width: 720px;
 }
 
 .about-text .eyebrow {
