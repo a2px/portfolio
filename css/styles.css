@@ -7,7 +7,7 @@
   --color-light-blue:   #E3E9F9;
   --color-accent:       #274CAB;
   --color-accent-dark:  #1c3a87;
-  --color-green:        #AAC864;
+  --color-green:        #5a7a1a;
   --color-red:          #BF3E3E;
   --color-text:         #0D0D0D;
   --color-text-muted:   #4F6080;
@@ -95,7 +95,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 
 .nav__logo {
-  font-size: var(--text-md);
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--color-text);
@@ -110,7 +110,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 
 .nav__link {
-  font-size: var(--text-sm);
+  font-size: 18px;
   font-weight: 400;
   color: var(--color-text-muted);
   transition: color var(--ease);
@@ -236,7 +236,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   color: #000000;
   line-height: 1.2;
   letter-spacing: 0;
-  max-width: 900px;
+  max-width: 100%;
 }
 
 /* highlighted keywords */
@@ -302,7 +302,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
 }
 .card__thumb img {
   position: absolute;
@@ -369,68 +369,80 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
    FOOTER
    ============================================================ */
 .footer {
-  background: var(--color-off-white);
+  background: var(--color-bg);
   border-top: 1px solid var(--color-border);
-  padding: var(--space-lg) 0 var(--space-md);
+  padding: var(--space-lg) 0;
+  margin-top: var(--space-xl);
 }
 
-.footer__top {
+.footer__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+/* Brand */
+.footer__brand {
+  flex: 0 0 auto;
+  min-width: 200px;
+  padding-right: 8px;
+}
+.footer__brand-name {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--color-border);
-  margin-bottom: var(--space-md);
-  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+.footer__star {
+  color: var(--color-accent);
+  font-size: 16px;
+}
+.footer__tagline {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text);
 }
 
-.footer__brand {}
-.footer__brand-name {
-  font-size: var(--text-md);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+/* Vertical divider */
+.footer__divider {
+  width: 1px;
+  background: var(--color-border);
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* Nav columns */
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 120px;
+}
+.footer__col-heading {
+  font-size: 16px;
+  font-weight: 500;
   color: var(--color-text);
-  display: block;
   margin-bottom: 2px;
 }
-.footer__brand-role {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-}
-
-.footer__nav {
-  display: flex;
-  gap: 36px;
-}
-.footer__nav-link {
-  font-size: var(--text-sm);
+.footer__link {
+  font-size: 15px;
   color: var(--color-text-muted);
   transition: color var(--ease);
 }
-.footer__nav-link:hover { color: var(--color-accent); }
+.footer__link:hover { color: var(--color-text); }
 
-.footer__social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-accent);
-  border: 1.5px solid var(--color-accent);
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  transition: all var(--ease);
+/* Projects 2-column sub-grid */
+.footer__projects {
+  display: flex;
+  gap: 32px;
 }
-.footer__social-link:hover {
-  background: var(--color-accent);
-  color: #fff;
-}
-
-.footer__bottom {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  text-align: center;
+.footer__projects-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* ============================================================
@@ -616,8 +628,10 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
     order: -1;
   }
 
-  .footer__top { flex-direction: column; align-items: flex-start; }
-  .footer__nav { flex-wrap: wrap; gap: 20px; }
+  .footer__inner { flex-direction: column; gap: var(--space-md); }
+  .footer__brand { text-align: center; width: 100%; padding-right: 0; padding-bottom: var(--space-md); border-bottom: 1px solid var(--color-border); }
+  .footer__brand-name { justify-content: center; }
+  .footer__divider { display: none; }
 }
 
 /* ============================================================
