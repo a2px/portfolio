@@ -103,7 +103,7 @@
 }
 
 .cs-container {
-  max-width: 800px;
+  max-width: var(--container-max);
 }
 
 .cs-placeholder {
