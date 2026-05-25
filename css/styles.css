@@ -573,10 +573,10 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 
 .about-bio p {
-  font-size: clamp(22px, 2.5vw, 28px);
-  font-weight: 400;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 300;
   color: var(--color-text);
-  line-height: 1.4;
+  line-height: 1.75;
   margin-bottom: var(--space-md);
 }
 
@@ -587,12 +587,12 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 
 .about-skills li {
-  font-size: clamp(22px, 2.5vw, 28px);
-  font-weight: 400;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 300;
   color: var(--color-text);
   padding: 18px 0;
   border-top: 1px solid var(--color-border);
-  line-height: 1.2;
+  line-height: 1.75;
 }
 
 .about-skills li:last-child {
