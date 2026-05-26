@@ -83,6 +83,24 @@
   border-radius: var(--radius-md);
 }
 
+/* Ideation / Crazy 8s container — gray, two images side by side */
+.cs-ideation-container {
+  background: var(--color-off-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: var(--space-lg);
+}
+.cs-ideation-container img {
+  width: 45%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
 /* Outer tan container wrapping a full cs-split */
 .cs-features-wrap {
   background: #FAF3E9;
