@@ -236,7 +236,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
    ============================================================ */
 .hero {
   padding-top: calc(var(--nav-h) + var(--space-lg));
-  padding-bottom: 34px;
+  padding-bottom: 68px;
 }
 
 @keyframes star-fall {
@@ -705,8 +705,8 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   }
 
   .footer__inner { flex-direction: column; gap: var(--space-md); }
-  .footer__brand { text-align: center; width: 100%; padding-right: 0; padding-bottom: var(--space-md); border-bottom: 1px solid var(--color-border); }
-  .footer__brand-name { justify-content: center; }
+  .footer__brand { text-align: left; width: 100%; padding-right: 0; padding-bottom: var(--space-md); border-bottom: 1px solid var(--color-border); }
+  .footer__brand-name { justify-content: flex-start; }
   .footer__divider { display: none; }
 }
 
