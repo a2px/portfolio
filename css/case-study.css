@@ -60,6 +60,35 @@
   border-radius: var(--radius-md);
 }
 
+/* Two-image side-by-side variant */
+.cs-gif-container--row {
+  gap: 16px;
+}
+.cs-gif-container--row img {
+  max-width: 38%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+/* No background — used when inside an outer tan container */
+.cs-gif-container--no-bg {
+  background: transparent;
+  aspect-ratio: unset;
+  padding: 0;
+}
+
+/* Outer tan container wrapping a full cs-split */
+.cs-features-wrap {
+  background: #FAF3E9;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-top: var(--space-md);
+}
+.cs-split--centered {
+  align-items: center;
+  margin-top: 0;
+}
+
 /* Generic two-column content split */
 .cs-split {
   display: grid;
