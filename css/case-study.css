@@ -55,8 +55,7 @@
   overflow: hidden;
 }
 .cs-gif-container img {
-  max-height: 75%;
-  width: auto;
+  max-width: 55%;
   height: auto;
   border-radius: var(--radius-md);
 }
@@ -306,6 +305,9 @@
   aspect-ratio: 3 / 4;
   border-radius: 0;
   border: none;
+}
+.cs-card__img .cs-gif-container {
+  border-radius: 0;
 }
 .cs-card__body {
   padding: var(--space-md);
