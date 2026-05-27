@@ -426,18 +426,19 @@
 .cs-steps { margin: var(--space-lg) 0; }
 .cs-step {
   display: grid;
-  grid-template-columns: 72px 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
   padding: var(--space-md) 0;
   border-top: 1px solid var(--color-border);
-  align-items: start;
+  align-items: center;
 }
 .cs-step__num {
   font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--color-accent);
-  padding-top: 4px;
+  display: block;
+  margin-bottom: 8px;
 }
 .cs-step h3 { margin-bottom: 8px; }
 .cs-step p  { margin-bottom: 0; }
@@ -490,6 +491,5 @@
   .cs-stats { grid-template-columns: 1fr; }
   .cs-cards { grid-template-columns: 1fr; }
   .cs-step  { grid-template-columns: 1fr; }
-  .cs-step__num { padding-top: 0; }
   .cs-step__media { margin: var(--space-sm) 0 0; }
 }
