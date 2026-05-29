@@ -112,22 +112,23 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  height: 420px;
 }
 .cs-iter-phones img,
 .cs-iter-phones .cs-media-placeholder {
-  width: 48%;
+  height: 100%;
+  width: auto;
   flex-shrink: 0;
-  height: auto;
   border-radius: var(--radius-md);
 }
 .cs-iter-phones--single img,
 .cs-iter-phones--single .cs-media-placeholder {
-  max-width: 200px;
+  max-height: 200px;
 }
 .cs-iter-phones--3 img,
 .cs-iter-phones--3 .cs-media-placeholder {
-  width: 31%;
-  flex-shrink: 0;
+  height: 100%;
+  width: auto;
 }
 .cs-iter-placeholder {
   aspect-ratio: 9 / 16;
