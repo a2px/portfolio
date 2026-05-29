@@ -2,7 +2,7 @@
    CUSTOM PROPERTIES
    ============================================================ */
 :root {
-  --color-bg:           #FFFFFF;
+  --color-bg:           #FCFEF9;
   --color-off-white:    #F9FAFC;
   --color-light-blue:   #E3E9F9;
   --color-accent:       #274CAB;
@@ -78,7 +78,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-h);
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(252, 254, 249, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--color-border);
@@ -203,7 +203,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .tag {
   display: inline-block;
   padding: 4px 12px;
-  background: var(--color-light-blue);
+  background: #FFFFFF;
   color: var(--color-accent);
   border-radius: var(--radius-pill);
   font-size: var(--text-xs);
@@ -704,7 +704,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
     position: fixed;
     top: var(--nav-h);
     left: 0; right: 0;
-    background: #fff;
+    background: var(--color-bg);
     flex-direction: column;
     gap: 0;
     border-bottom: 1px solid var(--color-border);
