@@ -138,14 +138,14 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: var(--space-lg) var(--space-lg) 0;
+  padding: var(--space-lg);
   margin-top: var(--space-md);
   overflow: hidden;
 }
 .cs-style-phones img {
   height: 420px;
   width: auto;
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border-radius: var(--radius-md);
   display: block;
 }
 .cs-style-phones img:nth-child(2) {
