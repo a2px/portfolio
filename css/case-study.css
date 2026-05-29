@@ -148,9 +148,6 @@
   border-radius: var(--radius-md);
   display: block;
 }
-.cs-style-phones img:nth-child(2) {
-  height: 480px;
-}
 
 /* Ideation / Crazy 8s container — gray, two images side by side */
 .cs-ideation-container {
