@@ -129,6 +129,29 @@
   flex-shrink: 0;
 }
 
+/* Final style guide phone gallery */
+.cs-style-phones {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+  padding: var(--space-lg) var(--space-lg) 0;
+  margin-top: var(--space-md);
+  overflow: hidden;
+}
+.cs-style-phones img {
+  height: 420px;
+  width: auto;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  display: block;
+}
+.cs-style-phones img:nth-child(2) {
+  height: 480px;
+}
+
 /* Ideation / Crazy 8s container — gray, two images side by side */
 .cs-ideation-container {
   background: var(--color-off-white);
