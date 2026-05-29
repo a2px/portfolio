@@ -525,7 +525,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .footer__divider + .footer__col { margin-left: 64px; }
 .footer__col + .footer__col    { margin-left: 40px; }
 .footer__col-heading {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   color: var(--color-text);
   margin-bottom: -5px;
