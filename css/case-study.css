@@ -523,6 +523,17 @@
   box-sizing: border-box;
 }
 
+/* Closing cloud decoration */
+.cs-closing-cloud {
+  padding-top: var(--space-xl);
+}
+.cs-closing-cloud img {
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+  opacity: 0.85;
+}
+
 @media (max-width: 768px) {
   .cs-hero__split { grid-template-columns: 1fr; gap: var(--space-lg); }
   .cs-hero__right { order: -1; }
