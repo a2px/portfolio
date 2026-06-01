@@ -543,6 +543,10 @@
   .cs-hero__right { order: -1; }
   .cs-split { grid-template-columns: 1fr; gap: var(--space-lg); }
   .cs-media-row { grid-template-columns: 1fr; }
+  .cs-gif-container--row { flex-direction: column; }
+  .cs-gif-container--row img { max-width: 80%; }
+  .cs-ideation-container { flex-direction: column; }
+  .cs-ideation-container img { width: 80%; }
 }
 
 @media (max-width: 640px) {
