@@ -106,7 +106,9 @@
 
 /* Iteration phone screenshots */
 .cs-iter-row {
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
 }
 .cs-iter-phones {
   display: flex;
@@ -250,8 +252,10 @@
   flex-direction: column;
   gap: 8px;
   padding: var(--space-md);
+  background: #FFFFFF;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
 .cs-meta__item {
@@ -521,6 +525,17 @@
   text-align: center;
   padding: var(--space-md);
   box-sizing: border-box;
+}
+
+/* Closing cloud decoration */
+.cs-closing-cloud {
+  padding-top: var(--space-xl);
+}
+.cs-closing-cloud img {
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+  opacity: 0.85;
 }
 
 @media (max-width: 768px) {
