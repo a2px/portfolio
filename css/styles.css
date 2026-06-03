@@ -237,6 +237,51 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   background: var(--color-light-blue);
 }
 
+/* Slide-bubble button */
+.btn--slide {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+  gap: 0;
+  transition: color 0.38s ease, border-color 0.38s ease;
+}
+.btn--slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn--slide:hover {
+  color: #fff;
+  border-color: var(--color-accent);
+}
+.btn--slide:hover::before {
+  transform: scaleX(1);
+}
+.btn--slide__text,
+.btn--slide__arrow {
+  position: relative;
+  z-index: 1;
+}
+.btn--slide__arrow {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-4px);
+  margin-left: 0;
+  transition: opacity 0.2s ease 0.12s, transform 0.2s ease 0.12s, margin-left 0.2s ease 0.12s;
+}
+.btn--slide:hover .btn--slide__arrow {
+  opacity: 1;
+  transform: translateX(0);
+  margin-left: 8px;
+}
+
 /* ============================================================
    TAGS
    ============================================================ */
