@@ -241,9 +241,9 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .btn--slide {
   position: relative;
   overflow: hidden;
-  background: #fff;
-  color: var(--color-text);
-  border: 1.5px solid var(--color-border);
+  background: var(--color-accent);
+  color: #fff;
+  border: 1.5px solid var(--color-accent);
   gap: 0;
   transition: color 0.38s ease, border-color 0.38s ease;
 }
@@ -251,14 +251,14 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--color-accent);
+  background: var(--color-light-blue);
   border-radius: inherit;
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn--slide:hover {
-  color: #fff;
+  color: var(--color-accent);
   border-color: var(--color-accent);
 }
 .btn--slide:hover::before {
@@ -270,15 +270,8 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   z-index: 1;
 }
 .btn--slide__arrow {
-  display: inline-block;
-  opacity: 0;
-  transform: translateX(-4px);
-  margin-left: 0;
-  transition: opacity 0.2s ease 0.12s, transform 0.2s ease 0.12s, margin-left 0.2s ease 0.12s;
-}
-.btn--slide:hover .btn--slide__arrow {
-  opacity: 1;
-  transform: translateX(0);
+  display: inline-flex;
+  align-items: center;
   margin-left: 8px;
 }
 
