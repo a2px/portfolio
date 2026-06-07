@@ -60,7 +60,7 @@ if (heroStar) {
     const count = 30;
     for (let i = 0; i < count; i++) {
       const star = document.createElement('img');
-      star.src = 'images/star.png';
+      star.src = 'images/star.svg';
       star.className = 'star-particle';
       const size = 20 + Math.random() * 36;
       const left = Math.random() * 100;
