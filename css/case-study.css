@@ -374,6 +374,17 @@
   margin-bottom: var(--space-md);
 }
 
+/* Sub-headings that should stay small even on lennar-page */
+.lennar-page .cs-section h3.cs-h3-sub,
+.cs-h3-sub {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
 /* Keep step sub-headings at normal size */
 .lennar-page .cs-step h3 {
   font-size: var(--text-lg);
