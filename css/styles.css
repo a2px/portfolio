@@ -161,6 +161,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 .nav__link {
   font-size: 18px;
+  font-family: 'Instrument Serif', serif;
   font-weight: 400;
   color: var(--color-text-muted);
   transition: color var(--ease);
