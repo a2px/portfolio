@@ -669,7 +669,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .footer__col {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
   min-width: 120px;
   align-items: flex-start;
 }
@@ -681,7 +681,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   font-family: 'Instrument Serif', serif;
   font-weight: 400;
   color: var(--color-text);
-  margin-bottom: -5px;
+  margin-bottom: 4px;
   display: inline-block;
   border-bottom: 2px solid var(--color-accent);
   padding-bottom: 4px;
