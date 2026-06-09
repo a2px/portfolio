@@ -624,6 +624,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: stretch;
   flex-shrink: 0;
   width: 40px;
 }
