@@ -160,7 +160,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 
 .nav__link {
-  font-size: 18px;
+  font-size: 26px;
   font-family: 'Instrument Serif', serif;
   font-weight: 400;
   color: var(--color-text-muted);
@@ -693,6 +693,11 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   transition: color var(--ease);
   position: relative;
   display: inline-block;
+  white-space: nowrap;
+}
+.footer__link::before {
+  content: '• ';
+  color: var(--color-text-muted);
 }
 .footer__link::after {
   content: '';
@@ -845,6 +850,22 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
     grid-template-columns: 1fr 360px;
     gap: 56px;
   }
+
+  /* Stack social links vertically at tablet widths */
+  .footer__social-sep { display: none; }
+  .footer__social-link {
+    display: block;
+    margin-top: 6px;
+  }
+  .footer__social-link::before {
+    content: '• ';
+    color: var(--color-text-muted);
+  }
+  .footer__social-link::after { display: none; }
+
+  /* Shrink footer tagline slightly */
+  .footer__tagline { font-size: 22px; }
+  .footer__col-heading { font-size: 22px; }
 }
 
 /* ============================================================
@@ -874,7 +895,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   }
   .nav__link {
     padding: 14px var(--container-px);
-    font-size: var(--text-base);
+    font-size: 26px;
   }
   .nav__link::after { display: none; }
   .nav__toggle { display: flex; }
@@ -904,6 +925,21 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   }
   .footer__brand-name { justify-content: flex-start; }
   .footer__divider { display: none; }
+  .footer__social-sep { display: none; }
+  .footer__social-link {
+    display: block;
+    margin-top: 6px;
+  }
+  .footer__social-link::before {
+    content: '• ';
+    color: var(--color-text-muted);
+  }
+  .footer__social-link::after { display: none; }
+  .footer__link::before {
+    content: '• ';
+    color: var(--color-text-muted);
+  }
+  .footer__link::after { display: none; }
 }
 
 /* ============================================================
