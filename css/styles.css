@@ -434,6 +434,16 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   gap: var(--space-md);
 }
 
+.projects__heading {
+  text-align: center;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -483,6 +493,8 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .card:hover .card__thumb img { transform: scale(1.05); }
 .card__thumb--2 img { transform: scale(1.4); object-position: center; }
 .card:hover .card__thumb--2 img { transform: scale(1.45); }
+.card__thumb--3 img { transform: scale(1.35); object-position: center; }
+.card:hover .card__thumb--3 img { transform: scale(1.4); }
 .card__thumb--5 img { transform: scale(1.35); object-position: center; }
 .card__thumb--6 img { transform: scale(1.35); object-position: center; }
 .card--no-link { cursor: default; }
