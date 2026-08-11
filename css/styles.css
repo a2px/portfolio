@@ -430,7 +430,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='8'%3E%3Cpath d='M0 4 Q5 0 10 4 Q15 8 20 4' fill='none' stroke='%23E8ECF2' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center left;
-  margin: var(--space-xl) 0;
+  margin: var(--space-xl) 0 40px;
 }
 
 .projects__heading {
