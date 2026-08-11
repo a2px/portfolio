@@ -481,6 +481,11 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   transition: transform 0.4s ease;
 }
 .card:hover .card__thumb img { transform: scale(1.05); }
+.card__thumb--2 img { transform: scale(1.4); object-position: center; }
+.card:hover .card__thumb--2 img { transform: scale(1.45); }
+.card__thumb--5 img { transform: scale(1.35); object-position: center; }
+.card--no-link { cursor: default; }
+.card--no-link:hover .card__thumb--5 img { transform: scale(1.35); }
 
 
 .card__thumb--coming-soon {
