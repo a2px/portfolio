@@ -392,7 +392,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   font-size: 18px;
   font-weight: 300;
   color: var(--color-text-muted);
-  line-height: inherit;
+  line-height: 1.2;
 }
 
 .hero__line1 {
@@ -419,6 +419,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   font-size: 18px;
   font-weight: 300;
   color: var(--color-text-muted);
+  line-height: 1.2;
 }
 
 /* highlighted keywords */
@@ -578,7 +579,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 300;
   color: var(--color-text-muted);
-  line-height: 1.5;
+  line-height: 1.2;
   flex: 1;
 }
 
