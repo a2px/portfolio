@@ -61,7 +61,7 @@
   border-color: var(--color-accent);
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
-.cs-project-nav__next { align-items: flex-end; text-align: right; }
+.cs-project-nav__next .cs-project-nav__info { align-items: flex-end; text-align: right; }
 .cs-project-nav__label {
   font-size: 13px;
   font-weight: 500;
