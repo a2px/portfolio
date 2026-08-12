@@ -36,8 +36,8 @@
   --radius-lg: 24px;
   --radius-pill: 100px;
 
-  --container-max: 1240px;
-  --container-px:  56px;
+  --container-max: 1440px;
+  --container-px:  24px;
   --nav-h:         68px;
 
   --ease: 0.22s ease;
@@ -459,7 +459,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px 24px;
+  gap: 28px 16px;
 }
 
 /* ============================================================
