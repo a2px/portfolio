@@ -389,7 +389,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 
 .hero__aside-text {
-  font-size: 32px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--color-text-muted);
   line-height: 1.6;
@@ -406,7 +406,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .hero__line1 { padding-bottom: 0; margin-bottom: 12px; }
 
 .hero__statement {
-  font-size: 32px;
+  font-size: 18px;
   font-weight: 400;
   color: #000000;
   line-height: 1.2;
@@ -416,7 +416,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 .hero__sub {
   display: block;
-  font-size: 32px;
+  font-size: 18px;
   font-weight: 300;
   color: var(--color-text-muted);
 }
