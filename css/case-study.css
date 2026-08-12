@@ -2,6 +2,20 @@
    CASE STUDY PAGES
    ============================================================ */
 
+/* Restore original container widths for case study pages */
+:root {
+  --container-max: 1240px;
+  --container-px:  56px;
+}
+
+@media (max-width: 1200px) {
+  :root { --container-px: 40px; }
+}
+
+@media (max-width: 768px) {
+  :root { --container-px: 28px; }
+}
+
 /* Project navigation (prev / next) */
 .cs-project-nav {
   display: flex;
