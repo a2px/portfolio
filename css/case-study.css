@@ -31,11 +31,30 @@
   flex-direction: column;
   gap: 6px;
   flex: 1;
-  padding: 24px 28px;
+  padding: 0;
   border: 1px solid var(--color-border);
   border-radius: 16px;
   background: #ffffff;
+  overflow: hidden;
   transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.cs-project-nav__thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  flex-shrink: 0;
+}
+
+.cs-project-nav__prev .cs-project-nav__thumb { object-position: center; }
+
+.cs-project-nav__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px 20px;
 }
 .cs-project-nav__prev:hover,
 .cs-project-nav__next:hover {
