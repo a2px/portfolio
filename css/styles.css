@@ -322,7 +322,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
    HERO
    ============================================================ */
 .hero {
-  padding-top: calc(var(--nav-h) + var(--space-lg));
+  padding-top: calc(var(--nav-h) + var(--space-2xl));
   padding-bottom: 68px;
 }
 
@@ -484,7 +484,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px 16px;
+  gap: 84px 16px;
 }
 
 /* ============================================================
