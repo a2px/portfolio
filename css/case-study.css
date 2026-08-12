@@ -49,6 +49,7 @@
 }
 
 .cs-project-nav__prev .cs-project-nav__thumb { object-position: center; }
+.cs-project-nav__thumb.cs-project-nav__thumb--locate-alpha { object-position: center 67%; }
 
 .cs-project-nav__info {
   display: flex;
