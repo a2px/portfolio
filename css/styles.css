@@ -413,7 +413,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
    PROJECTS SECTION
    ============================================================ */
 .projects {
-  padding: 0 0 var(--space-2xl);
+  padding: 0 0 var(--space-lg);
 }
 
 .projects__header {
@@ -430,7 +430,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='8'%3E%3Cpath d='M0 4 Q5 0 10 4 Q15 8 20 4' fill='none' stroke='%23E8ECF2' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center left;
-  margin: 40px 0 40px;
+  margin: 24px 0 24px;
 }
 
 .projects__heading {
@@ -440,7 +440,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .projects__heading--live {
@@ -453,29 +453,29 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   display: inline-block;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 32px 24px;
 }
 
 /* ============================================================
    PROJECT CARD
    ============================================================ */
 .card {
-  background: #FFFFFF;
-  border-radius: 12px;
+  background: transparent;
+  border-radius: 0;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  box-shadow: none;
 }
-.card:hover {}
 .card:focus-within {
   outline: 3px solid var(--color-accent);
   outline-offset: 2px;
+  border-radius: 12px;
 }
 
 .card__link {
@@ -487,7 +487,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 .card__thumb {
   width: 100%;
-  aspect-ratio: 20 / 12.13;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
@@ -502,7 +502,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   display: block;
   transition: transform 0.4s ease;
 }
-.card:hover .card__thumb img { transform: scale(1.05); }
+.card:hover .card__thumb img { transform: scale(1.03); }
 .card__thumb--2 img { object-position: center 60%; }
 .card__thumb--3 img { object-position: center; }
 .card__thumb--4 img { object-position: center 58%; }
@@ -515,6 +515,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--color-surface);
 }
 .card__coming-soon {
   font-size: var(--text-sm);
@@ -526,7 +527,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 
 .card__body {
-  padding: 20px 24px 24px;
+  padding: 20px 0 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -536,23 +537,23 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 25px;
+  margin-top: 16px;
 }
 
 .card__title {
-  font-size: var(--text-lg);
-  font-weight: 400;
+  font-size: clamp(17px, 1.4vw, 21px);
+  font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--color-text);
   line-height: 1.3;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .card__desc {
-  font-size: 20px;
+  font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 300;
   color: var(--color-text-muted);
-  line-height: 1.4;
+  line-height: 1.5;
   flex: 1;
 }
 
@@ -918,6 +919,10 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   .footer__col + .footer__col { margin-left: 24px; }
 }
 
+@media (max-width: 1024px) {
+  .projects__grid { gap: 24px 20px; }
+}
+
 @media (max-width: 1200px) {
   :root {
     --container-px: 40px;
@@ -988,7 +993,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
   .projects__header { flex-direction: column; align-items: flex-start; }
   .projects__grid,
-  .work-grid { grid-template-columns: 1fr; gap: 20px; }
+  .work-grid { grid-template-columns: 1fr; gap: 28px; }
 
   .about-split {
     grid-template-columns: 1fr;
