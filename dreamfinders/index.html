@@ -75,9 +75,21 @@
 
     <div class="cs-body">
       <div class="container cs-container">
+        <nav class="cs-sidenav" aria-label="Page sections">
+          <a href="#" class="cs-sidenav__link cs-sidenav__link--overview">Overview</a>
+          <a href="#overview" class="cs-sidenav__link">Overview</a>
+          <a href="#challenge" class="cs-sidenav__link">The Challenge</a>
+          <a href="#design-approach" class="cs-sidenav__link">Design Approach</a>
+          <a href="#accessibility-audit" class="cs-sidenav__link">Accessibility Audit</a>
+          <a href="#implementation" class="cs-sidenav__link">Implementation</a>
+          <a href="#reflection" class="cs-sidenav__link">Reflection</a>
+          <a href="#handoff" class="cs-sidenav__link">Handoff</a>
+          <a href="#whats-next" class="cs-sidenav__link">What's Next</a>
+        </nav>
+        <div class="cs-sections">
 
         <!-- Overview -->
-        <section class="cs-section">
+        <section class="cs-section" id="overview">
           <h2>Overview</h2>
           <h3>Custom Marketplace for New Homes</h3>
           <p>Dream Finders Homes, Inc. is a large homebuilding company with operations across the country, covering everything from designing, building, and selling homes. With new construction home sales falling, they wanted to expand a new investor sales channel with a white-labelled marketplace custom-tailored for investor clients.</p>
@@ -89,7 +101,7 @@
         </section>
 
         <!-- The Challenge -->
-        <section class="cs-section">
+        <section class="cs-section" id="challenge">
           <h2>The Challenge</h2>
           <h3>Applying a Client's Design System While Ensuring Compliance</h3>
           <p>The core tension was preserving the brand's established visual identity — ornate, high-end, traditional — while making it functional and legally compliant for a digital marketplace context.</p>
@@ -116,7 +128,7 @@
         </section>
 
         <!-- Design Approach -->
-        <section class="cs-section">
+        <section class="cs-section" id="design-approach">
           <h2>Design Approach</h2>
           <h3>Building a Compliant Design System from the Brand Up</h3>
           <p>Rather than applying the existing style guide wholesale, I audited each brand element through an accessibility lens before incorporating it into the UI. This meant finding compliant color pairings within the brand palette, selecting appropriate type scales from their font family, and reserving ornamental elements for decorative — not functional — contexts.</p>
@@ -126,7 +138,7 @@
         </section>
 
         <!-- Accessibility Audit -->
-        <section class="cs-section">
+        <section class="cs-section" id="accessibility-audit">
           <h2>Accessibility Audit</h2>
           <h3>Auditing in Figma and in Code</h3>
           <p>I ran a two-phase audit: first in Figma using contrast checkers and annotation plugins to catch failures before development, then in the browser using DevTools and axe to validate the implemented code. This parallel approach caught issues at the design stage — far cheaper to fix than after handoff.</p>
@@ -142,7 +154,7 @@
         </section>
 
         <!-- Implementation -->
-        <section class="cs-section">
+        <section class="cs-section" id="implementation">
           <h2>Implementation</h2>
           <h3>From Figma to a Live, Keyboard-Accessible Site</h3>
           <p>As the sole designer on this project, I worked directly in the codebase to implement accessibility features rather than handing off specs to a developer. I used Claude Code to accelerate keyboard navigation implementation, focus trap logic for modals, and semantic HTML scaffolding — then manually verified each component in the browser.</p>
@@ -175,7 +187,7 @@
         </section>
 
         <!-- Reflection -->
-        <section class="cs-section">
+        <section class="cs-section" id="reflection">
           <h2>Reflection</h2>
           <h3>Designing Within Constraints Sharpens Decision-Making</h3>
 
@@ -193,7 +205,7 @@
         </section>
 
         <!-- Handoff -->
-        <section class="cs-section">
+        <section class="cs-section" id="handoff">
           <h2>Handoff</h2>
           <h3>The Product at the Point of Handoff</h3>
           <figure class="cs-media">
@@ -205,7 +217,7 @@
         </section>
 
         <!-- What's Next -->
-        <section class="cs-section">
+        <section class="cs-section" id="whats-next">
           <h2>What's Next</h2>
           <h3>Expanding the Marketplace and Deepening Accessibility</h3>
           <p>The initial release established a compliant foundation. Future iterations will build on it by expanding the investor-specific feature set and deepening accessibility coverage beyond the core flows.</p>
@@ -217,6 +229,7 @@
           </ul>
         </section>
 
+        </div><!-- /.cs-sections -->
       </div>
     </div>
 

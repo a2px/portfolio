@@ -604,9 +604,13 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
    MINI CARDS (about page)
    ============================================================ */
 .mini-cards-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .mini-cards-list { grid-template-columns: 1fr; }
 }
 
 .mini-card {

@@ -409,6 +409,53 @@
   max-width: var(--container-max);
 }
 
+.cs-sidenav {
+  position: fixed;
+  left: 24px;
+  top: calc(var(--nav-h) + 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 50;
+}
+
+.cs-sidenav__link {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: 5px 0 5px 12px;
+  border-left: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.cs-sidenav__link--overview {
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+  border-left: none !important;
+}
+
+.cs-sidenav__link:hover {
+  color: var(--color-text);
+}
+
+.cs-sidenav__link.active {
+  color: var(--color-text);
+  border-left-color: var(--color-accent);
+  font-weight: 500;
+}
+
+@media (max-width: 1280px) {
+  .cs-sidenav {
+    display: none;
+  }
+}
+
 .cs-placeholder {
   font-size: var(--text-md);
   font-weight: 300;

@@ -80,6 +80,25 @@ if (heroStar) {
   });
 }
 
+// ── Case study sticky section nav ───────────────────────────
+const sidenav = document.querySelector('.cs-sidenav');
+if (sidenav) {
+  const sections = document.querySelectorAll('.cs-section[id]');
+  const sideLinks = sidenav.querySelectorAll('.cs-sidenav__link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sideLinks.forEach(l => l.classList.remove('active'));
+        const active = sidenav.querySelector(`[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+}
+
 // ── Subtle scroll shadow on nav ──────────────────────────────
 const nav = document.querySelector('.nav');
 if (nav) {
