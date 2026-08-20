@@ -200,6 +200,37 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   background: var(--color-light-blue);
 }
 
+/* Ghost outline + slide-bubble on hover */
+.btn--ghost-slide {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  color: var(--color-text);
+  border: var(--border-1) solid var(--color-border);
+  gap: 0;
+  transition: color var(--ease-slide), border-color var(--ease-slide);
+}
+.btn--ghost-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-light-blue);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--ease-slide-full);
+}
+.btn--ghost-slide:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.btn--ghost-slide:hover::before {
+  transform: scaleX(1);
+}
+.btn--ghost-slide:hover .btn--slide__arrow {
+  transform: rotate(45deg);
+}
+
 /* Slide-bubble button */
 .btn--slide {
   position: relative;
@@ -643,6 +674,41 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   line-height: var(--leading-normal);
 }
 
+/* Single full-width image variant */
+.mini-card__images--single {
+  grid-template-columns: 1fr;
+  padding-left: var(--space-md);
+}
+.mini-card__images--single .mini-card__image-item {
+  width: 100%;
+}
+.mini-card__images--single .mini-card__image-placeholder {
+  width: 100%;
+}
+.mini-card__images--single .mini-card__image-placeholder img {
+  object-position: center center;
+}
+
+.mini-card__link-btn {
+  margin-top: var(--space-3);
+  padding: 7px var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+}
+
+/* Compact ghost-slide button used in mini-card and experience section */
+.mini-card__link-btn,
+.exp-linkedin-btn {
+  padding: 7px var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+}
+.mini-card__link-btn { margin-top: var(--space-3); }
+
 @media (max-width: 768px) {
   .mini-card { flex-direction: column; }
   .mini-card__text { flex: none; padding: var(--space-md); }
@@ -890,6 +956,13 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   grid-template-columns: 1fr 1.6fr;
   gap: var(--space-16);
   align-items: start;
+}
+
+.exp-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
 }
 
 .exp-blurb {
