@@ -6,11 +6,15 @@
       return;
     }
 
-    opentype.load('/fonts/LastoriaBoldRegular.otf', function (err, font) {
-      if (err) {
-        container.textContent = 'Ashley Xie';
-        return;
-      }
+    fetch('/fonts/LastoriaBoldRegular.otf')
+      .then(function (res) { return res.arrayBuffer(); })
+      .then(function (buf) {
+        var font = opentype.parse(buf);
+        render(font);
+      })
+      .catch(function () { container.textContent = 'Ashley Xie'; });
+
+    function render(font) {
 
       var text = 'Ashley Xie';
       var fontSize = 72;
@@ -92,7 +96,7 @@
           });
         });
       });
-    });
+    }
   }
 
   if (document.readyState === 'loading') {
