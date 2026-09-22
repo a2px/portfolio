@@ -395,6 +395,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   margin-bottom: var(--space-3);
 }
 .hero__line1 { padding-bottom: 0; margin-bottom: var(--space-3); }
+#hero-signature { margin-left: 0.6em; }
 
 .hero__statement {
   font-size: var(--text-md);
