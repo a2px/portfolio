@@ -6,7 +6,7 @@
       return;
     }
 
-    fetch('/fonts/LastoriaBoldRegular.otf')
+    fetch('fonts/LastoriaBoldRegular.otf')
       .then(function (res) { return res.arrayBuffer(); })
       .then(function (buf) {
         var font = opentype.parse(buf);
