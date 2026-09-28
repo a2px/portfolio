@@ -525,7 +525,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .card__thumb--3 img { object-position: center; }
 .card__thumb--4 img { object-position: center 58%; }
 .card__thumb--5 img { object-position: center; }
-.card__thumb--6 img { object-position: center 25%; }
+.card__thumb--6 img { object-position: center center; }
 .card--no-link { cursor: default; }
 .card--no-link .card__thumb img { opacity: 0.5; }
 .card--no-link:hover .card__thumb img { transform: none; }
@@ -1152,6 +1152,8 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
   .projects__grid,
   .work-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+
+  .card:has(.card__thumb--5) { order: 1; }
 
   /* Footer: stack and bullet list */
   .footer__inner { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
