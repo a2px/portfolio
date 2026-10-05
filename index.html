@@ -4,13 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ashley Xie — Product Designer</title>
-  <meta name="description" content="Ashley Xie is a designer that creates complex, data-heavy tools for people making high-stakes decisions." />
+  <meta name="description" content="Ashley Xie is a designer that creates sophisticated, data-heavy tools for people making high-stakes decisions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/svg+xml" href="images/star.svg" />
+  <script src="https://cdn.amplitude.com/script/bf3e02a8056fb269819f54bf117d6cf0.js"></script>
+  <script>
+    window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1, serverZone: 'US' }));
+    window.amplitude.init('bf3e02a8056fb269819f54bf117d6cf0', {
+      serverZone: 'US',
+      autocapture: true,
+    });
+  </script>
 <style>
   #page-loader{position:fixed;inset:0;z-index:9999;background:#FCFEF9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:1}
 </style>
@@ -45,7 +53,7 @@
             <img src="images/star.svg" alt="" class="hero__star" aria-hidden="true" />
             <p class="hero__statement" id="hero-heading">
               <span class="hero__line1">Hi, I'm<span id="hero-signature" aria-label="Ashley Xie"><noscript> Ashley Xie</noscript></span>.</span>
-              <span class="hero__sub">A designer that creates complex, data-heavy tools for people making high-stakes decisions.</span>
+              <span class="hero__sub">A designer that creates sophisticated, data-heavy tools for people making high-stakes decisions.</span>
             </p>
           </div>
           <div class="hero__aside">
