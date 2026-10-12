@@ -900,7 +900,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
    ABOUT PAGE
    ============================================================ */
 .about-section {
-  padding-top: calc(var(--nav-h) + var(--space-2xl));
+  padding-top: calc((var(--nav-h) + var(--space-2xl)) / 2);
   padding-bottom: var(--space-2xl);
 }
 

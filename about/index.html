@@ -13,6 +13,17 @@
   <link rel="icon" type="image/svg+xml" href="../images/star.svg" />
 <style>
   #page-loader{position:fixed;inset:0;z-index:9999;background:#FCFEF9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:1}
+
+  .photo-strip{width:100%;overflow:hidden;height:360px;margin-top:68px;margin-bottom:0;}
+  .photo-strip__inner{display:flex;gap:6px;animation:photo-marquee 36s linear infinite;width:max-content;}
+  .photo-strip__inner:hover{animation-play-state:paused;}
+  .photo-strip__img{height:360px;width:auto;object-fit:cover;display:block;flex-shrink:0;}
+  @keyframes photo-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media(max-width:768px){
+    .about-section{padding-top:calc(var(--nav-h) + var(--space-2xl));}
+    .photo-strip{margin-top:24px;margin-bottom:0;height:240px;margin-left:calc(-1 * var(--container-px));margin-right:calc(-1 * var(--container-px));width:calc(100% + 2 * var(--container-px));}
+    .photo-strip__img{height:240px;}
+  }
 </style>
 </head>
 <body>
@@ -37,6 +48,26 @@
   </nav>
 
   <main>
+    <!-- ── Photo Strip ────────────────────────────────────────── -->
+    <div class="photo-strip" aria-hidden="true">
+      <div class="photo-strip__inner">
+        <img src="../images/about/photo1.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo2.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo3.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo4.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo5.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo6.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo7.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo1.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo2.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo3.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo4.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo5.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo6.jpg" alt="" class="photo-strip__img" />
+        <img src="../images/about/photo7.jpg" alt="" class="photo-strip__img" />
+      </div>
+    </div>
+
     <section class="about-section" aria-labelledby="about-heading">
       <div class="container">
         <div class="about-split">
@@ -45,20 +76,16 @@
           <div class="about-bio">
             <p class="about-label">About</p>
             <p id="about-heading">
-              Ashley Xie is a UI/UX designer and product thinker focused on how people
-              make high-stakes decisions. She studied Human-Centered Design,
-              Entrepreneurship, Classics, and Studio Art at Dartmouth College.
+              I'm a UI/UX designer and product thinker focused on how people
+              make high-stakes decisions. I studied Human-Centered Design
+              at Dartmouth College.
             </p>
             <p>
-              Most recently, she designed the Lennar Investor Marketplace — a product
+              Most recently, I designed the Lennar Investor Marketplace, a product
               that gained 6,500+ users and drove $64M+ in new revenue within its first
-              two months. She currently works at Locate Alpha, shaping proptech
-              experiences for serious investors.
-            </p>
-            <p>
-              She brings a research-first mindset to every project, balancing sharp
-              visual craft with a deep curiosity about user behavior. Outside of work,
-              she dances bachata, draws figure models, and watches birds.
+              two months. I bring a research-first mindset to every project, balancing
+              sharp visual craft with a deep curiosity about user behavior. Outside of
+              work, I dance bachata, draw figure models, and watch birds.
             </p>
           </div>
 
@@ -124,90 +151,6 @@
     </section>
 
 
-    <!-- ── Section Divider ──────────────────────────────────── -->
-    <div class="section-divider" aria-hidden="true"></div>
-
-    <!-- ── Mini Projects ─────────────────────────────────────── -->
-    <section class="projects" aria-labelledby="about-mini-projects-heading">
-      <div class="container">
-        <h2 class="projects__heading projects__heading--live" id="about-mini-projects-heading">Mini Projects</h2>
-        <div class="mini-cards-list">
-
-          <!-- Mini Card — CMA Software -->
-          <article class="mini-card">
-            <div class="mini-card__text">
-              <h3 class="mini-card__title">Map Menu Overhaul: Comparative Market Analysis Software</h3>
-              <p class="mini-card__desc">Cleaning up an awkward map menu to properly surface its layer controls, CMA coloring modes, and slide-out panel.</p>
-            </div>
-            <div class="mini-card__images mini-card__images--portrait">
-              <div class="mini-card__image-item">
-                <div class="mini-card__image-placeholder mini-card__image-placeholder--portrait">
-                  <video autoplay loop muted playsinline preload="auto"
-                         poster="../images/mini/cma/before-poster.jpg"
-                         width="962" height="1284">
-                    <source src="../images/mini/cma/before.mp4" type="video/mp4">
-                    <source src="../images/mini/cma/before.webm" type="video/webm">
-                  </video>
-                </div>
-                <p class="mini-card__caption">Before — mismatched icons, clumsy UX language, unclear relationship between items</p>
-              </div>
-              <div class="mini-card__image-item">
-                <div class="mini-card__image-placeholder mini-card__image-placeholder--portrait">
-                  <video autoplay loop muted playsinline preload="auto"
-                         poster="../images/mini/cma/after-poster.jpg"
-                         width="1882" height="2494">
-                    <source src="../images/mini/cma/after.webm" type="video/webm">
-                    <source src="../images/mini/cma/after.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <p class="mini-card__caption">After — clear title added, tightened UX language, reordered items to match common user actions, switched checkboxes to toggles, added indents to show item hierarchy, line separation between unrelated items, reset capability</p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Mini Card — Viral LinkedIn Post -->
-          <article class="mini-card" style="display:none">
-            <div class="mini-card__text">
-              <h3 class="mini-card__title">Viral LinkedIn Post</h3>
-              <p class="mini-card__desc">A visual design that gained significant traction and engagement on LinkedIn.</p>
-            </div>
-            <div class="mini-card__images">
-              <div class="mini-card__image-item">
-                <div class="mini-card__image-placeholder"></div>
-                <p class="mini-card__caption">Post design</p>
-              </div>
-              <div class="mini-card__image-item">
-                <div class="mini-card__image-placeholder"></div>
-                <p class="mini-card__caption">Engagement results</p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Mini Card — Locate Alpha Landing Page -->
-          <article class="mini-card">
-            <div class="mini-card__text">
-              <h3 class="mini-card__title">Locate Alpha Investor Marketplace Landing Page</h3>
-              <p class="mini-card__desc">A conversion-focused landing page for Locate Alpha's investor-facing marketplace — built for clarity, brand cohesion, and lead capture.</p>
-              <a href="https://mbm.locatealpha.com/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost-slide mini-card__link-btn">
-                <span class="btn--slide__text">View Live</span>
-                <span class="btn--slide__arrow" aria-hidden="true">
-                  <svg width="12" height="12" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 35L35 13"/><path d="M21 13H35V27"/></svg>
-                </span>
-              </a>
-            </div>
-            <div class="mini-card__images mini-card__images--single">
-              <div class="mini-card__image-item">
-                <div class="mini-card__image-placeholder">
-                  <img src="../images/mini/landing-hero.jpg" alt="Locate Alpha Investor Marketplace landing page hero" loading="lazy" />
-                </div>
-                <p class="mini-card__caption">Hero section — Locate Alpha Investor Marketplace</p>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- ── Footer ─────────────────────────────────────────────── -->
@@ -231,5 +174,23 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    (function () {
+      var strip = document.querySelector('.photo-strip');
+      var abio  = document.querySelector('.about-bio');
+      var main  = document.querySelector('main');
+      var mq    = window.matchMedia('(max-width: 768px)');
+      function place(e) {
+        if (e.matches) {
+          abio.after(strip);
+        } else {
+          main.prepend(strip);
+          strip.style.marginTop = '';
+        }
+      }
+      mq.addEventListener('change', place);
+      place(mq);
+    })();
+  </script>
 </body>
 </html>
