@@ -14,6 +14,189 @@
   <link rel="icon" type="image/svg+xml" href="../images/star.svg" />
 <style>
   #page-loader{position:fixed;inset:0;z-index:9999;background:#FCFEF9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:1}
+
+  /* Outer wrapper — clears the fixed nav */
+  .cs-split-outer {
+    margin-top: var(--nav-h);
+    height: calc(100vh - var(--nav-h));
+    overflow: hidden;
+  }
+  .cs-split-outer > .container {
+    height: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  /* Two-column grid */
+  .cs-two-col {
+    display: grid;
+    grid-template-columns: 1fr 8px 1fr;
+    height: 100%;
+  }
+
+  /* Each column scrolls independently, scrollbar hidden */
+  .cs-two-col__text,
+  .cs-two-col__images {
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .cs-two-col__text::-webkit-scrollbar,
+  .cs-two-col__images::-webkit-scrollbar { display: none; }
+
+  .cs-two-col__text {
+    padding: 96px;
+  }
+  .cs-two-col__images {
+    padding: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  /* Squiggly vertical divider */
+  .cs-two-col__divider {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='20'%3E%3Cpath d='M4 0 Q0 5 4 10 Q8 15 4 20' fill='none' stroke='%23E8ECF2' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat-y;
+    background-position: center top;
+    align-self: stretch;
+  }
+
+  /* ── Left column typography ── */
+  .cs-two-col__text .cs-back {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+  }
+  .cs-two-col__text .cs-hero__tags {
+    margin-bottom: var(--space-2);
+  }
+  .cs-two-col__text .cs-hero__title {
+    font-size: clamp(36px, 5vw, 64px);
+    margin-bottom: var(--space-2);
+    line-height: 1.05;
+  }
+  .cs-two-col__text .cs-hero__sub {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-light);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-3);
+    max-width: none;
+  }
+
+  /* Meta bullet lists */
+  .cs-two-col__text .cs-meta__value ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cs-two-col__text .cs-meta__value ul li::before {
+    content: '• ';
+    color: var(--color-text-muted);
+  }
+  .cs-two-col__text .cs-meta__value ul li {
+    font-size: var(--text-xs);
+    line-height: var(--leading-snug);
+    color: var(--color-text);
+  }
+
+  /* Meta block */
+  .cs-two-col__text .cs-meta--cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3);
+    padding-top: 0;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+  .cs-two-col__text .cs-meta--cards .cs-meta__item {
+    padding: var(--space-md) var(--space-md);
+    gap: var(--space-3);
+  }
+  .cs-two-col__text .cs-meta__label {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .cs-two-col__text .cs-meta__value {
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+  }
+
+  /* Section separator */
+  .cs-two-col__text .cs-section {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: var(--border-1) solid var(--color-border);
+    margin-bottom: 0;
+  }
+
+  /* Hide the eyebrow h2 — the page context makes it redundant */
+  .cs-two-col__text .cs-section > h2 { display: none; }
+
+  .cs-two-col__text .cs-section > h3 {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-snug);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+  }
+  .cs-two-col__text .cs-section p {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-3);
+  }
+
+  /* Plain feature grid — no card backgrounds */
+  .cs-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm) var(--space-sm);
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: var(--border-1) solid var(--color-border);
+  }
+  .cs-feature-item h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-snug);
+  }
+  .cs-feature-item p {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-light);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+  }
+
+  /* Right column images */
+  .cs-two-col__images figure { margin: 0; }
+  .cs-two-col__images img { width: 100%; display: block; border-radius: 12px; }
+  .cs-two-col__images .card__thumb { border-radius: 12px; overflow: hidden; }
+  .cs-two-col__images .card__thumb img { border-radius: 0; }
+
+  /* Mobile: stack columns */
+  @media (max-width: 768px) {
+    .cs-split-outer { height: auto; overflow: visible; }
+    .cs-split-outer > .container { height: auto; }
+    .cs-two-col { grid-template-columns: 1fr; height: auto; }
+    .cs-two-col__text,
+    .cs-two-col__images { overflow-y: visible; height: auto; }
+    .cs-two-col__text { padding: var(--space-md) var(--space-md) var(--space-md) var(--space-md); }
+    .cs-two-col__images { padding: 0 var(--space-md) var(--space-xl) var(--space-md); }
+    .cs-two-col__divider {
+      height: 8px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='8'%3E%3Cpath d='M0 4 Q5 0 10 4 Q15 8 20 4' fill='none' stroke='%23E8ECF2' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      margin: var(--space-lg) 0;
+    }
+    .cs-feature-grid { grid-template-columns: 1fr; }
+    .cs-two-col__text .cs-meta--cards { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body class="lennar-page">
@@ -37,11 +220,15 @@
   </nav>
 
   <main>
-    <div class="cs-hero" style="padding-bottom: 0;">
+
+    <!-- Split-screen two-column view -->
+    <div class="cs-split-outer">
       <div class="container">
-        <a href="../" class="cs-back">← Back to Home</a>
-        <div class="cs-hero__split">
-          <div class="cs-hero__left">
+        <div class="cs-two-col">
+
+          <!-- Left: text, scrolls independently -->
+          <div class="cs-two-col__text">
+            <a href="../" class="cs-back">← Back to Home</a>
             <div class="cs-hero__tags">
               <span class="tag">UI Design</span>
               <span class="tag">UX Design</span>
@@ -49,97 +236,80 @@
             </div>
             <h1 class="cs-hero__title">Lennar BTR Opportunity Portal</h1>
             <p class="cs-hero__sub">Lennar's direct-to-institutional channel for build-to-rent community dispositions — designed from zero to working prototype in record time, demoed to Lennar leadership, and shipped as a live product.</p>
-          </div>
-          <div class="cs-hero__right">
-            <div class="card__thumb card__thumb--6 card__thumb--screenshot">
-              <img src="../images/projects/lennar-btr-card.png" alt="Lennar BTR Opportunity Portal" />
+
+            <div class="cs-meta cs-meta--cards">
+              <div class="cs-meta__item">
+                <span class="cs-meta__label">Timeline</span>
+                <span class="cs-meta__value">2026 (ongoing)</span>
+              </div>
+              <div class="cs-meta__item">
+                <span class="cs-meta__label">Role</span>
+                <span class="cs-meta__value"><ul><li>UX/UI Design</li><li>Prototyping</li><li>Product Strategy</li></ul></span>
+              </div>
+              <div class="cs-meta__item">
+                <span class="cs-meta__label">Team</span>
+                <span class="cs-meta__value"><ul><li>Designer (me)</li><li>CTO</li><li>3 Developers</li></ul></span>
+              </div>
+              <div class="cs-meta__item">
+                <span class="cs-meta__label">Deliverables</span>
+                <span class="cs-meta__value"><ul><li>Working prototype</li><li>Live product</li></ul></span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="cs-meta cs-meta--cards">
-          <div class="cs-meta__item">
-            <span class="cs-meta__label">Timeline</span>
-            <span class="cs-meta__value">2026 (ongoing)</span>
-          </div>
-          <div class="cs-meta__item">
-            <span class="cs-meta__label">Role</span>
-            <span class="cs-meta__value">UX/UI Design · Prototyping · Product Strategy</span>
-          </div>
-          <div class="cs-meta__item">
-            <span class="cs-meta__label">Team</span>
-            <span class="cs-meta__value">Designer (me) · CTO · Development team</span>
-          </div>
-          <div class="cs-meta__item">
-            <span class="cs-meta__label">Deliverables</span>
-            <span class="cs-meta__value">Working prototype · Live product</span>
-          </div>
-        </div>
-        <figure style="margin: var(--space-md) 0 0;">
-          <img src="../images/projects/lennar-btr-browse.png" alt="Lennar BTR Opportunity Portal browse view — map and community listings" loading="lazy" style="width: 100%; display: block; border-radius: 16px;" />
-        </figure>
-      </div>
-    </div>
 
-    <div class="cs-body" style="padding-top: var(--space-md);">
-      <div class="container cs-container">
-        <nav class="cs-sidenav" aria-label="Page sections">
-          <a href="#" class="cs-sidenav__link cs-sidenav__link--overview">Overview</a>
-          <a href="#overview" class="cs-sidenav__link">Overview</a>
-        </nav>
-        <div class="cs-sections">
+            <section class="cs-section" id="overview">
+              <h2>Overview</h2>
+              <h3>From a Rough Idea to a Live Institutional Product</h3>
+              <p>Lennar's BTR (Build-to-Rent) Opportunity Portal is a direct-to-institutional channel that gives BTR operators and institutional buyers access to Lennar's whole-community portfolios under structured terms — before they ever reach the open market. The portal gives buyers detailed community data, floor plans, financial comps, and demographic insights to evaluate and submit interest on entire BTR communities at scale.</p>
+              <p>The project started with a single conversation. After hearing the initial concept, I moved fast: gathering context, clarifying the business model, mapping an assumptive user journey, and building a working AI-assisted prototype — all before formal requirements were written. That prototype was demoed to Lennar leadership, ignited buy-in and further exploration, and became the foundation for the live product that followed.</p>
 
-          <!-- Overview -->
-          <section class="cs-section" id="overview">
-            <h2>Overview</h2>
-            <h3>From a Rough Idea to a Live Institutional Product</h3>
-            <p>Lennar's BTR (Build-to-Rent) Opportunity Portal is a direct-to-institutional channel that gives BTR operators and institutional buyers access to Lennar's whole-community portfolios under structured terms — before they ever reach the open market. The portal gives buyers detailed community data, floor plans, financial comps, and demographic insights to evaluate and submit interest on entire BTR communities at scale.</p>
-            <p>The project started with a single conversation. After hearing the initial concept, I moved fast: gathering context, clarifying the business model, mapping an assumptive user journey, and building a working AI-assisted prototype — all before formal requirements were written. That prototype was demoed to Lennar leadership, ignited buy-in and further exploration, and became the foundation for the live product that followed.</p>
-
-            <div class="cs-cards" style="grid-template-columns: repeat(2, 1fr); margin-top: var(--space-lg);">
-              <div class="cs-card">
-                <div class="cs-card__body">
+              <div class="cs-feature-grid">
+                <div class="cs-feature-item">
                   <h4>Buyer-facing Portal</h4>
                   <p>Institutional buyers and BTR operators browse available communities, review financial data, explore floor plans and comps, and submit interest — all in one place.</p>
                 </div>
-              </div>
-              <div class="cs-card">
-                <div class="cs-card__body">
+                <div class="cs-feature-item">
                   <h4>Lennar Admin Dashboard</h4>
                   <p>Internal Lennar team manages community listings, approves buyers, monitors engagement, and maintains portfolio-wide FAQs from a dedicated admin interface.</p>
                 </div>
-              </div>
-              <div class="cs-card">
-                <div class="cs-card__body">
+                <div class="cs-feature-item">
                   <h4>Fast Prototype to Production</h4>
                   <p>A working prototype was built with AI in record time, demoed to leadership to secure alignment, then iterated weekly until reaching proof of concept and shipping.</p>
                 </div>
-              </div>
-              <div class="cs-card">
-                <div class="cs-card__body">
+                <div class="cs-feature-item">
                   <h4>Structured Deal Flow</h4>
                   <p>Each community listing includes pricing, delivery dates, comps, demographics, floor plans, and docs — everything a buyer needs to evaluate a whole-community acquisition.</p>
                 </div>
               </div>
-            </div>
+            </section>
+          </div><!-- /.cs-two-col__text -->
 
-            <figure style="margin: var(--space-lg) 0 var(--space-md);">
-              <img src="../images/projects/lennar-btr-detail-about.png" alt="Lennar BTR community detail page — About tab with key numbers and community highlights" loading="lazy" style="width: 100%; display: block; border-radius: 16px;" />
-            </figure>
-            <figure style="margin: 0 0 var(--space-md);">
-              <img src="../images/projects/lennar-btr-detail-comps.png" alt="Lennar BTR community detail page — Comps tab with nearby BTR communities and rental data" loading="lazy" style="width: 100%; display: block; border-radius: 16px;" />
-            </figure>
-            <figure style="margin: 0 0 var(--space-md);">
-              <img src="../images/projects/lennar-btr-admin-dashboard.png" alt="Lennar BTR admin dashboard showing listings, buyers, and top community activity" loading="lazy" style="width: 100%; display: block; border-radius: 16px;" />
-            </figure>
-            <figure style="margin: 0 0 0;">
-              <img src="../images/projects/lennar-btr-admin-faqs.png" alt="Lennar BTR admin FAQ management interface" loading="lazy" style="width: 100%; display: block; border-radius: 16px;" />
-            </figure>
-          </section>
+          <!-- Squiggly center divider -->
+          <div class="cs-two-col__divider" aria-hidden="true"></div>
 
-        </div><!-- /.cs-sections -->
+          <!-- Right: images, scrolls independently -->
+          <div class="cs-two-col__images">
+            <figure>
+              <img src="../images/projects/lennar-btr-browse.png" alt="Lennar BTR Opportunity Portal browse view — map and community listings" loading="lazy" />
+            </figure>
+            <figure>
+              <img src="../images/projects/lennar-btr-detail-about.png" alt="Lennar BTR community detail page — About tab" loading="lazy" />
+            </figure>
+            <figure>
+              <img src="../images/projects/lennar-btr-detail-comps.png" alt="Lennar BTR community detail page — Comps tab" loading="lazy" />
+            </figure>
+            <figure>
+              <img src="../images/projects/lennar-btr-admin-dashboard.png" alt="Lennar BTR admin dashboard" loading="lazy" />
+            </figure>
+            <figure>
+              <img src="../images/projects/lennar-btr-admin-faqs.png" alt="Lennar BTR admin FAQ management" loading="lazy" />
+            </figure>
+          </div><!-- /.cs-two-col__images -->
+
+        </div><!-- /.cs-two-col -->
       </div>
-    </div>
+    </div><!-- /.cs-split-outer -->
 
+    <!-- Project nav below the fold -->
     <div class="container">
       <nav class="cs-project-nav" aria-label="Project navigation">
         <a href="../lennar/" class="cs-project-nav__prev">
@@ -158,6 +328,7 @@
         </a>
       </nav>
     </div>
+
   </main>
 
   <footer class="footer" role="contentinfo">
