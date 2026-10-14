@@ -46,10 +46,10 @@
   .cs-two-col__images::-webkit-scrollbar { display: none; }
 
   .cs-two-col__text {
-    padding: 96px;
+    padding: 48px 96px 96px;
   }
   .cs-two-col__images {
-    padding: 96px;
+    padding: 48px 96px 96px;
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
@@ -75,7 +75,7 @@
     margin-bottom: var(--space-2);
   }
   .cs-two-col__text .cs-hero__title {
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: clamp(27px, 3.75vw, 48px);
     margin-bottom: var(--space-2);
     line-height: 1.05;
   }
@@ -109,7 +109,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-3);
     padding-top: 0;
-    margin-top: var(--space-lg);
+    margin-top: var(--space-md);
     margin-bottom: var(--space-lg);
   }
   .cs-two-col__text .cs-meta--cards .cs-meta__item {
@@ -228,12 +228,6 @@
 
           <!-- Left: text, scrolls independently -->
           <div class="cs-two-col__text">
-            <a href="../" class="cs-back">← Back to Home</a>
-            <div class="cs-hero__tags">
-              <span class="tag">UI Design</span>
-              <span class="tag">UX Design</span>
-              <span class="tag">Proptech</span>
-            </div>
             <h1 class="cs-hero__title">Lennar BTR Opportunity Portal</h1>
             <p class="cs-hero__sub">Lennar's direct-to-institutional channel for build-to-rent community dispositions — designed from zero to working prototype in record time, demoed to Lennar leadership, and shipped as a live product.</p>
 
