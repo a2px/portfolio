@@ -99,6 +99,27 @@ if (sidenav) {
   sections.forEach(s => observer.observe(s));
 }
 
+// ── Card videos: pause when offscreen, respect reduced-motion ─
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cardVideos = document.querySelectorAll('.card__video');
+
+if (cardVideos.length) {
+  const vidObserver = new IntersectionObserver((entries) => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting && !reducedMotion) {
+        target.play().catch(() => {});
+      } else {
+        target.pause();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cardVideos.forEach(video => {
+    if (reducedMotion) video.removeAttribute('autoplay');
+    vidObserver.observe(video);
+  });
+}
+
 // ── Subtle scroll shadow on nav ──────────────────────────────
 const nav = document.querySelector('.nav');
 if (nav) {

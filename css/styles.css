@@ -1265,3 +1265,54 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   width: 100%; height: 100%;
   object-fit: cover;
 }
+
+/* ============================================================
+   CARD VIDEO MEDIA PATTERN
+   Background fills container; video is inset, centered, flat.
+   ============================================================ */
+.card__thumb--media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--video-inset);
+}
+
+/* Background image: full-bleed, stays still on hover */
+.card__thumb--media .card__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+  transition: none;
+}
+
+/* Inner video: inset, centered, with soft shadow */
+.card__thumb--media .card__video {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-video);
+  box-shadow: var(--shadow-video);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transform: scale(1);
+}
+
+/* Hover: video scales up slightly, shadow deepens */
+.card:hover .card__thumb--media .card__video {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-video-hover);
+}
+
+/* Ensure the background image doesn't scale on card hover */
+.card:hover .card__thumb--media .card__bg { transform: none; }
+
+@media (max-width: 640px) {
+  .card__thumb--media {
+    padding: var(--video-inset-mobile);
+  }
+}
