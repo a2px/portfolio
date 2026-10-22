@@ -436,6 +436,40 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .hl-navy  { color: var(--color-accent-dark); }
 
 /* ============================================================
+   HERO LOGO STRIP
+   ============================================================ */
+.hero__logos {
+  display: grid;
+  grid-template-columns: repeat(4, 72px);
+  gap: var(--space-2);        /* 8px between tiles */
+  margin-top: var(--space-3); /* 12px below heading */
+}
+
+/* Items 4–7 live in row 2; auto-placement fills cols 1–4 there */
+.hero__logo-tile:nth-child(n+4) {
+  grid-row-start: 2;
+}
+
+.hero__logo-tile {
+  width: 72px;
+  height: 72px;
+  background: var(--color-white);
+  border: var(--border-1) solid var(--color-tag-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__logo-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
    PROJECTS SECTION
    ============================================================ */
 .projects {
