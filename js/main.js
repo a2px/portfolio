@@ -99,14 +99,13 @@ if (sidenav) {
   sections.forEach(s => observer.observe(s));
 }
 
-// ── Card videos: pause when offscreen, respect reduced-motion ─
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// ── Card videos: pause when offscreen, play when in view ──────
 const cardVideos = document.querySelectorAll('.card__video');
 
 if (cardVideos.length) {
   const vidObserver = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting && !reducedMotion) {
+      if (isIntersecting) {
         target.play().catch(() => {});
       } else {
         target.pause();
@@ -114,10 +113,7 @@ if (cardVideos.length) {
     });
   }, { threshold: 0.2 });
 
-  cardVideos.forEach(video => {
-    if (reducedMotion) video.removeAttribute('autoplay');
-    vidObserver.observe(video);
-  });
+  cardVideos.forEach(video => vidObserver.observe(video));
 }
 
 // ── Subtle scroll shadow on nav ──────────────────────────────
