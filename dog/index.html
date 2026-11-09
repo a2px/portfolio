@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dog — Ashley Xie</title>
+  <meta name="description" content="Colby the dachshund mix." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="../images/star.svg" />
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.168.0/build/three.module.js",
+      "gsap": "https://unpkg.com/gsap@3.15.1/index.js"
+    }
+  }
+  </script>
+
+<style>
+  #page-loader{position:fixed;inset:0;z-index:9999;background:#FCFEF9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:1}
+
+  .dog-section {
+    padding-top: calc(var(--nav-h) + var(--space-2xl));
+    padding-bottom: var(--space-xl);
+  }
+
+  #carousel-wrap {
+    position: relative;
+    width: 100%;
+    height: 72vh;
+    min-height: 440px;
+    overflow: hidden;
+  }
+  #carousel-mount {
+    width: 100%;
+    height: 100%;
+  }
+  #carousel-counter {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Lexend', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: #000;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  #carousel-close {
+    position: absolute;
+    top: 2vh;
+    right: 4vw;
+    font-family: 'Lexend', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    mix-blend-mode: exclusion;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 10;
+    white-space: nowrap;
+  }
+
+  .dog-mobile-grid {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+  .dog-mobile-grid img {
+    width: 100%;
+    aspect-ratio: auto;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1024px) {
+    #carousel-wrap { display: none; }
+    .dog-mobile-grid { display: grid; }
+  }
+</style>
+</head>
+<body>
+
+  <div id="page-loader" role="status" aria-label="Loading">
+    <img src="../images/star.svg" alt="" class="loader__star" aria-hidden="true" />
+    <span class="loader__name">Ashley Xie</span>
+  </div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../" class="nav__logo"><img src="../images/star.svg" alt="" class="nav__logo-star" aria-hidden="true" />Ashley Xie</a>
+      <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" role="list">
+        <li><a href="../" class="nav__link">Work</a></li>
+        <li><a href="../about/" class="nav__link">About</a></li>
+        <li><a href="../dog/" class="nav__link active">Dog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="dog-section" aria-labelledby="dog-heading">
+      <div class="container">
+        <div class="about-bio">
+          <p class="about-label" id="dog-heading">Dog</p>
+          <p>This is my dog Colby, a dachsund mix that loves to chase and take naps in beams of sunlight.</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="carousel-wrap" aria-label="Photo carousel">
+      <div id="carousel-mount"></div>
+      <div id="carousel-counter" aria-live="polite">01/16</div>
+      <button id="carousel-close" aria-label="Close focus mode">Close</button>
+    </div>
+
+    <div class="dog-mobile-grid container" aria-label="Dog photos">
+      <img src="images/photo_2026-11-05_17-13-02.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-11.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-19.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-23.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-27.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-32.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-36.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-40.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-44.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-48.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-52.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-13-56.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-14-00.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-14-04.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-14-08.jpg" alt="Colby" loading="lazy" />
+      <img src="images/photo_2026-11-05_17-14-12.jpg" alt="Colby" loading="lazy" />
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__tagline">Currently looking for UI/UX and Product Design Roles</p>
+        <img src="../images/star.svg" alt="" class="footer__star-img" aria-hidden="true" />
+        <div class="footer__links">
+          <a href="https://www.linkedin.com/in/ashley-xie/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Connect on LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <span class="footer__social-sep"> · </span>
+          <a href="mailto:ashleyjxie@gmail.com" class="footer__social-link">ashleyjxie[@]gmail.com</a>
+          <span class="footer__social-sep"> · </span>
+          <a href="../Ashley_Xie_Design_Engineer.pdf" target="_blank" class="footer__social-link">Resume</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { gsap } from 'gsap';
+
+    // ── Image list ──────────────────────────────────────────────
+    const PROJECTS = [
+      { src: 'images/photo_2026-11-05_17-13-02.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-11.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-19.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-23.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-27.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-32.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-36.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-40.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-44.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-48.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-52.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-13-56.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-14-00.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-14-04.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-14-08.jpg',  aspect: null },
+      { src: 'images/photo_2026-11-05_17-14-12.jpg',  aspect: null },
+    ];
+
+    // ── Layout / scroll ─────────────────────────────────────────
+    const CONFIG = {
+      PANEL_H:       450,
+      GAP:           12,
+      EASE:          0.09,
+      WHEEL:         1.4,
+      DRAG:          1.6,
+      FRICTION:      0.865,
+      SNAP:          true,
+      SNAP_IDLE_MS:  120,
+      SNAP_EASE:     0.05,
+      SHRINK_MAX:    60,
+      SHRINK_ATTACK: 0.25,
+      SHRINK_DECAY:  0.06,
+    };
+
+    const INTERACT = {
+      drag:             true,
+      noClick:          false,
+      CLICK_SLOP:       6,
+      FLICK_IDLE_MS:    90,
+      TOUCH_DRAG:       1.0,
+      TOUCH_EASE:       0.22,
+      TOUCH_CLICK_SLOP: 12,
+    };
+
+    // ── Focus ───────────────────────────────────────────────────
+    const FOCUS = {
+      cardDuration:  0.7,
+      focusDuration: 0.9,
+      cardEase:      'power4.out',
+      focusEase:     'power3.out',
+      stagger:       0.06,
+      dropDist:      1.4,
+      centerScale:   1.18,
+    };
+
+    // ── Entry animation ─────────────────────────────────────────
+    const ENTRY = {
+      enabled:      true,
+      delay:        0.5,
+      startH:       80,
+      riseDuration: 1.0,
+      stagger:      0.07,
+      riseEase:     'power3.out',
+      fromBelow:    0.9,
+      growDelay:    0.25,
+      growDuration: 2.15,
+      growEase:     'expo.inOut',
+      growStagger:  0.085,
+      growDir:      'inward',
+    };
+
+    // ── Engine ──────────────────────────────────────────────────
+    function createCarousel(mount, callbacks = {}) {
+      const {
+        cursorElement  = null,
+        onActiveChange = () => {},
+        onFocusChange  = () => {},
+        onEntryDone    = () => {},
+        onModeChange   = () => {},
+      } = callbacks;
+
+      let W = mount.clientWidth;
+      let H = mount.clientHeight;
+
+      // transparent canvas — page background shows through the gaps
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(W, H);
+      renderer.setClearColor(0x000000, 0);
+      mount.appendChild(renderer.domElement);
+
+      const scene  = new THREE.Scene();
+      const camera = new THREE.OrthographicCamera(-W/2, W/2, H/2, -H/2, -100, 100);
+      camera.position.z = 10;
+
+      const loader  = new THREE.TextureLoader();
+      const sources = PROJECTS.map(img => {
+        const s = { tex: null, aspect: img.aspect || 1, locked: img.aspect != null };
+        loader.load(img.src, tex => {
+          tex.minFilter   = THREE.LinearMipmapLinearFilter;
+          tex.magFilter   = THREE.LinearFilter;
+          tex.generateMipmaps = true;
+          tex.anisotropy  = renderer.capabilities.getMaxAnisotropy();
+          tex.colorSpace  = THREE.SRGBColorSpace;
+          if (!s.locked && tex.image) s.aspect = tex.image.width / tex.image.height;
+          s.tex = tex;
+          recomputeTotal();
+          if (!userInteracted) { scroll = centerForIndex(0); target = scroll; }
+        });
+        return s;
+      });
+
+      function slotWidth(i) { return sources[i].aspect * CONFIG.PANEL_H + CONFIG.GAP; }
+      let offsets = [], totalWidth = 0;
+      function recomputeTotal() {
+        offsets = []; let acc = 0;
+        for (let i = 0; i < sources.length; i++) { offsets.push(acc); acc += slotWidth(i); }
+        totalWidth = acc;
+      }
+      recomputeTotal();
+
+      function centerForIndex(idx) {
+        const N = sources.length, loop = Math.floor(idx / N), s = ((idx % N) + N) % N;
+        return offsets[s] + slotWidth(s) / 2 - CONFIG.GAP / 2 + loop * totalWidth;
+      }
+      function nearestIndex(value) {
+        if (!totalWidth) return 0;
+        const N = sources.length; let best = 0, bestDist = Infinity;
+        for (let i = 0; i < N; i++) {
+          const center = offsets[i] + slotWidth(i) / 2 - CONFIG.GAP / 2;
+          const k = Math.round((value - center) / totalWidth);
+          const dist = Math.abs(center + k * totalWidth - value);
+          if (dist < bestDist) { bestDist = dist; best = i + k * N; }
+        }
+        return best;
+      }
+      function centerIndex(value) {
+        if (!totalWidth) return 0;
+        let bestI = 0, bestDist = Infinity;
+        for (let i = 0; i < sources.length; i++) {
+          const center = offsets[i] + slotWidth(i) / 2 - CONFIG.GAP / 2;
+          const k = Math.round((value - center) / totalWidth);
+          const dist = Math.abs(center + k * totalWidth - value);
+          if (dist < bestDist) { bestDist = dist; bestI = i; }
+        }
+        return bestI;
+      }
+      let lastCenter = -1;
+
+      const REPEATS = 4, pool = [];
+      for (let r = 0; r < REPEATS; r++) {
+        for (let i = 0; i < sources.length; i++) {
+          const mat  = new THREE.MeshBasicMaterial({ color: 0xdddddd, transparent: true });
+          const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 1, 1), mat);
+          mesh.visible = false; scene.add(mesh);
+          pool.push({ mesh, mat, srcIndex: i });
+        }
+      }
+
+      let scroll = centerForIndex(0), target = scroll;
+      let userInteracted = false, velocity = 0, prevScroll = 0, scrollEnergy = 0;
+      let pendingFocus = null, lastInput = performance.now(), snapped = false;
+
+      const focusState = { active: false, srcIndex: -1, poolIdx: -1, anim: null };
+      const drop = new Array(REPEATS * sources.length).fill(0);
+      let focusScale = 1;
+      const lastCenterX = new Array(REPEATS * sources.length);
+
+      const pEntry  = new Array(REPEATS * sources.length).fill(ENTRY.enabled ? 0 : 1);
+      let entryActive = ENTRY.enabled, entrySettled = false;
+      const growArr   = new Array(REPEATS * sources.length).fill(ENTRY.enabled ? 0 : 1);
+      let entryAnim   = null;
+
+      let panelRects = [], centeredPanel = null;
+
+      function layout() {
+        panelRects = []; centeredPanel = null;
+        let centeredDist = Infinity;
+        const half = W / 2, buffer = CONFIG.PANEL_H;
+        pool.forEach((p, poolIdx) => {
+          const rep = Math.floor(poolIdx / sources.length), i = p.srcIndex, src = sources[i];
+          const slotCenterInLoop = offsets[i] + slotWidth(i) / 2 - CONFIG.GAP / 2;
+          let x = slotCenterInLoop - scroll;
+          x = ((x % totalWidth) + totalWidth) % totalWidth;
+          x += (rep - Math.floor(REPEATS / 2)) * totalWidth;
+          if (x > half + totalWidth) x -= totalWidth * REPEATS;
+
+          const centerX = x;
+          const inEntry = entryActive || entrySettled;
+          if (!inEntry && (centerX < -half - buffer || centerX > half + buffer)) {
+            p.mesh.visible = false; lastCenterX[poolIdx] = undefined; return;
+          }
+          lastCenterX[poolIdx] = centerX;
+
+          const shrink = 1 - 0.25 * scrollEnergy;
+          const h = CONFIG.PANEL_H * shrink, wPx = src.aspect * CONFIG.PANEL_H * shrink;
+
+          if (src.tex && !p.bound) {
+            p.mat.map = src.tex; p.mat.color.set(0xffffff);
+            p.mat.needsUpdate = true; p.bound = true;
+          }
+
+          let y = 0;
+          const isFocused = focusState.active && focusState.poolIdx === poolIdx;
+          const d = drop[poolIdx] || 0;
+          let drawW = wPx, drawH = h;
+          if (isFocused) { drawW = wPx * focusScale; drawH = h * focusScale; }
+          else if (d > 0) { y = -d * H * FOCUS.dropDist; }
+
+          p.mesh.visible = true;
+          let finalX = centerX, finalY = y, finalW = drawW, finalH = drawH;
+
+          if (entryActive || entrySettled) {
+            const pe = pEntry[poolIdx] || 0, g = growArr[poolIdx] || 0;
+            const curH = ENTRY.startH + (drawH - ENTRY.startH) * g;
+            finalH = curH; finalW = curH * src.aspect;
+
+            const cSrc = centerIndex(scroll);
+            let di = i - cSrc;
+            if (di > sources.length / 2) di -= sources.length;
+            if (di < -sources.length / 2) di += sources.length;
+            const N = sources.length, midRep = Math.floor(REPEATS / 2);
+            if (rep !== midRep) { p.mesh.visible = false; lastCenterX[poolIdx] = undefined; return; }
+
+            const slotH = s => {
+              const gg = growArr[midRep * N + s] || 0;
+              return ENTRY.startH + (CONFIG.PANEL_H - ENTRY.startH) * gg;
+            };
+            let off = 0;
+            if (di > 0) {
+              for (let k = 0; k < di; k++) {
+                const sa = (((cSrc + k)     % N) + N) % N;
+                const sb = (((cSrc + k + 1) % N) + N) % N;
+                off += (sources[sa].aspect * slotH(sa) + sources[sb].aspect * slotH(sb)) / 2 + CONFIG.GAP;
+              }
+            } else if (di < 0) {
+              for (let k = 0; k < -di; k++) {
+                const sa = (((cSrc - k)     % N) + N) % N;
+                const sb = (((cSrc - k - 1) % N) + N) % N;
+                off -= (sources[sa].aspect * slotH(sa) + sources[sb].aspect * slotH(sb)) / 2 + CONFIG.GAP;
+              }
+            }
+            finalX = off;
+            if (finalX < -half - buffer || finalX > half + buffer) {
+              p.mesh.visible = false; lastCenterX[poolIdx] = undefined; return;
+            }
+            const below = -H * ENTRY.fromBelow;
+            finalY = below + (y - below) * pe;
+          }
+
+          p.mesh.position.set(finalX, finalY, 0);
+          p.mesh.scale.set(finalW, finalH, 1);
+
+          const sx = centerX + W / 2, sy = H / 2 - y;
+          panelRects.push({ left: sx - drawW/2, right: sx + drawW/2, top: sy - drawH/2, bottom: sy + drawH/2, poolIdx, srcIndex: i, centerX });
+          if (Math.abs(centerX) < centeredDist) { centeredDist = Math.abs(centerX); centeredPanel = { srcIndex: i, centerX, wPx, h, poolIdx }; }
+        });
+      }
+
+      function panelAtPointer(px, py) {
+        for (let i = 0; i < panelRects.length; i++) {
+          const r = panelRects[i];
+          if (px >= r.left && px <= r.right && py >= r.top && py <= r.bottom) return r;
+        }
+        return null;
+      }
+
+      const el = renderer.domElement;
+      el.style.touchAction = 'none';
+      el.style.userSelect  = 'none';
+      el.style.setProperty('-webkit-user-select', 'none');
+      el.style.setProperty('-webkit-touch-callout', 'none');
+      el.style.setProperty('-webkit-tap-highlight-color', 'transparent');
+
+      let dragging = false, dragPointerId = null, dragLastX = 0, dragDist = 0;
+      let dragVel = 0, dragMoveT = 0, suppressClick = false, dragPointerType = 'mouse';
+      let lastPointerX = NaN, lastPointerY = NaN, pointerInside = false, lastPointerType = 'mouse';
+
+      if (cursorElement) gsap.set(cursorElement, { xPercent: 20, yPercent: 30, scale: 0, autoAlpha: 0 });
+      const moveX = cursorElement ? gsap.quickTo(cursorElement, 'x', { duration: 0.5, ease: 'power3.out' }) : null;
+      const moveY = cursorElement ? gsap.quickTo(cursorElement, 'y', { duration: 0.5, ease: 'power3.out' }) : null;
+
+      let overPanel = false, hoverPanel = false, cursorNow = '';
+      function setCursor(v) { if (v === cursorNow) return; cursorNow = v; el.style.cursor = v; }
+      function updateCursor() {
+        if (focusState.active || entryActive || entrySettled) return setCursor('');
+        if (dragging) return setCursor('grabbing');
+        if (!hoverPanel) return setCursor('');
+        if (INTERACT.drag) return setCursor('grab');
+        return setCursor(INTERACT.noClick ? '' : 'pointer');
+      }
+      function setHover(on) { hoverPanel = on; setView(on); }
+      function refreshHover() {
+        if (!pointerInside || lastPointerType !== 'mouse') return;
+        if (!Number.isFinite(lastPointerX)) return;
+        if (focusState.active) { setHover(false); return; }
+        setHover(panelAtPointer(lastPointerX, lastPointerY) !== null);
+      }
+      function setView(on) {
+        if (entryActive || entrySettled) on = false;
+        if (dragging) on = false;
+        if (on === overPanel) { updateCursor(); return; }
+        overPanel = on; updateCursor();
+        if (!cursorElement) return;
+        gsap.killTweensOf(cursorElement, 'scale,autoAlpha,opacity,visibility');
+        gsap.to(cursorElement, { scale: on ? 1 : 0, autoAlpha: on ? 1 : 0, duration: on ? 0.35 : 0.25, ease: on ? 'power3.out' : 'power3.in' });
+      }
+
+      function inputLocked() { return focusState.active || entryActive || entrySettled; }
+
+      function onWheel(e) {
+        e.preventDefault();
+        if (inputLocked()) return;
+        userInteracted = true; pendingFocus = null;
+        target += (e.deltaY || e.deltaX) * CONFIG.WHEEL;
+        lastInput = performance.now(); snapped = false;
+      }
+      function onPointerDown(e) {
+        suppressClick = false;
+        if (!INTERACT.drag || inputLocked()) return;
+        if (dragging) return;
+        if (e.button !== 0 && e.pointerType === 'mouse') return;
+        dragging = true; dragPointerId = e.pointerId; dragPointerType = e.pointerType || 'mouse';
+        try { el.setPointerCapture(e.pointerId); } catch {}
+        dragLastX = e.clientX; lastPointerX = e.clientX; lastPointerY = e.clientY;
+        dragDist = 0; dragVel = 0; dragMoveT = performance.now();
+        setView(false); velocity = 0; pendingFocus = null;
+        userInteracted = true; snapped = false; lastInput = dragMoveT;
+      }
+      function onPointerMove(e) {
+        if (dragging && e.pointerId === dragPointerId) {
+          const sens = dragPointerType === 'mouse' ? CONFIG.DRAG : INTERACT.TOUCH_DRAG;
+          const dx = e.clientX - dragLastX; dragLastX = e.clientX; dragDist += Math.abs(dx);
+          target -= dx * sens; dragVel = dragVel * 0.6 + -dx * sens * 0.4;
+          dragMoveT = performance.now(); lastInput = dragMoveT; snapped = false;
+        }
+        lastPointerX = e.clientX; lastPointerY = e.clientY;
+        lastPointerType = e.pointerType || 'mouse'; pointerInside = true;
+        if (e.pointerType !== 'mouse') return;
+        if (moveX) moveX(e.clientX); if (moveY) moveY(e.clientY);
+        if (focusState.active) { setHover(false); return; }
+        setHover(panelAtPointer(e.clientX, e.clientY) !== null);
+      }
+      function onPointerUp(e) {
+        if (!dragging) return;
+        if (e && dragPointerId !== null && e.pointerId !== dragPointerId) return;
+        dragging = false;
+        if (dragPointerId !== null) { try { el.releasePointerCapture(dragPointerId); } catch {} dragPointerId = null; }
+        velocity = performance.now() - dragMoveT > INTERACT.FLICK_IDLE_MS ? 0 : dragVel;
+        dragVel = 0; lastInput = performance.now(); snapped = false;
+        suppressClick = dragDist > (dragPointerType === 'mouse' ? INTERACT.CLICK_SLOP : INTERACT.TOUCH_CLICK_SLOP);
+        if (dragPointerType === 'mouse') setHover(panelAtPointer(lastPointerX, lastPointerY) !== null);
+        else updateCursor();
+      }
+      function onEnter(e) { pointerInside = true; lastPointerType = e.pointerType || 'mouse'; }
+      function onLeave()  { pointerInside = false; setHover(false); }
+      function onClick(e) {
+        if (INTERACT.noClick) return;
+        if (suppressClick) { suppressClick = false; return; }
+        if (inputLocked()) return;
+        const hit = panelAtPointer(e.clientX, e.clientY);
+        if (!hit) return;
+        if (centeredPanel && hit.poolIdx === centeredPanel.poolIdx) { pendingFocus = null; openFocus(); return; }
+        userInteracted = true; velocity = 0;
+        target = centerForIndex(nearestIndex(scroll + hit.centerX));
+        snapped = true; pendingFocus = { srcIndex: hit.srcIndex }; setView(false);
+      }
+
+      function openFocus() {
+        if (focusState.active || !centeredPanel) return;
+        const src = sources[centeredPanel.srcIndex];
+        if (!src || !src.tex) return;
+        focusState.active = true; focusState.srcIndex = centeredPanel.srcIndex;
+        const focusPoolIdx = centeredPanel.poolIdx; focusState.poolIdx = focusPoolIdx;
+        target = centerForIndex(nearestIndex(scroll));
+
+        const focusX = lastCenterX[focusPoolIdx] || 0;
+        const others = pool.map((p, idx) => ({ idx, x: lastCenterX[idx] }))
+          .filter(o => o.idx !== focusPoolIdx && o.x !== undefined)
+          .map(o => ({ idx: o.idx, dist: Math.abs(o.x - focusX) }))
+          .sort((a, b) => a.dist - b.dist);
+        let rank = 0, prevDist = -1;
+        const ranked = others.map(o => {
+          if (prevDist >= 0 && o.dist - prevDist > 1) rank++;
+          prevDist = o.dist; return { idx: o.idx, rank };
+        });
+
+        if (focusState.anim) focusState.anim.kill();
+        const tl = gsap.timeline();
+        tl.to({ v: focusScale }, { v: FOCUS.centerScale, duration: FOCUS.focusDuration, ease: FOCUS.focusEase, onUpdate() { focusScale = this.targets()[0].v; } }, 0);
+        ranked.forEach(o => { tl.to(drop, { [o.idx]: 1, duration: FOCUS.cardDuration, ease: FOCUS.cardEase }, o.rank * FOCUS.stagger); });
+        focusState.anim = tl;
+        setView(false); onFocusChange(true);
+      }
+
+      function closeFocus() {
+        if (!focusState.active) return;
+        if (focusState.anim) focusState.anim.kill();
+        const focusX = lastCenterX[focusState.poolIdx] || 0;
+        const others = pool.map((p, idx) => ({ idx, x: lastCenterX[idx] }))
+          .filter(o => o.x !== undefined && (drop[o.idx] || 0) > 0)
+          .map(o => ({ idx: o.idx, dist: Math.abs(o.x - focusX) }))
+          .sort((a, b) => b.dist - a.dist);
+        let rank = 0, prevDist = -1;
+        const ranked = others.map(o => {
+          if (prevDist >= 0 && prevDist - o.dist > 1) rank++;
+          prevDist = o.dist; return { idx: o.idx, rank };
+        });
+        onFocusChange(false);
+        const tl = gsap.timeline({ onComplete: () => { focusState.active = false; focusState.srcIndex = -1; updateCursor(); } });
+        tl.to({ v: focusScale }, { v: 1, duration: FOCUS.focusDuration * 0.85, ease: FOCUS.focusEase, onUpdate() { focusScale = this.targets()[0].v; } }, 0);
+        ranked.forEach(o => { tl.to(drop, { [o.idx]: 0, duration: FOCUS.cardDuration * 0.85, ease: FOCUS.cardEase }, o.rank * FOCUS.stagger * 0.7); });
+        focusState.anim = tl;
+      }
+
+      function playEntry() {
+        if (entryAnim) entryAnim.kill();
+        for (let k = 0; k < pEntry.length; k++) pEntry[k] = 0;
+        entryActive = true; entrySettled = false; onEntryDone(false);
+        for (let k = 0; k < growArr.length; k++) growArr[k] = 0;
+        target = centerForIndex(nearestIndex(scroll)); scroll = target; velocity = 0; snapped = true;
+        layout();
+        const visible = [];
+        for (let k = 0; k < lastCenterX.length; k++) { if (lastCenterX[k] !== undefined) visible.push(k); }
+
+        const tl = gsap.timeline({ delay: ENTRY.delay });
+        const spread = ENTRY.stagger * Math.max(visible.length - 1, 1);
+        let lastRiseEnd = 0;
+        visible.forEach(idx => {
+          const at = Math.random() * spread;
+          lastRiseEnd = Math.max(lastRiseEnd, at + ENTRY.riseDuration);
+          tl.to(pEntry, { [idx]: 1, duration: ENTRY.riseDuration, ease: ENTRY.riseEase }, at);
+        });
+        tl.call(() => { entryActive = false; entrySettled = true; }, null, lastRiseEnd);
+
+        const cSrcG = centerIndex(scroll), Ng = sources.length, midRepG = Math.floor(REPEATS / 2);
+        const growList = []; let maxRank = 0;
+        for (let k = 0; k < lastCenterX.length; k++) {
+          if (lastCenterX[k] === undefined) continue;
+          if (Math.floor(k / Ng) !== midRepG) continue;
+          let di = (k % Ng) - cSrcG;
+          if (di > Ng / 2) di -= Ng;
+          if (di < -Ng / 2) di += Ng;
+          const r = Math.abs(di); maxRank = Math.max(maxRank, r);
+          growList.push({ idx: k, rank: r });
+        }
+        const growRanked = growList.map(v => ({ idx: v.idx, rank: ENTRY.growDir === 'outward' ? v.rank : maxRank - v.rank }));
+        const growStart = lastRiseEnd + ENTRY.growDelay;
+        let growEnd = growStart;
+        growRanked.forEach(o => {
+          const at = growStart + o.rank * ENTRY.growStagger;
+          growEnd = Math.max(growEnd, at + ENTRY.growDuration);
+          tl.to(growArr, { [o.idx]: 1, duration: ENTRY.growDuration, ease: ENTRY.growEase }, at);
+        });
+        tl.call(() => {
+          entrySettled = false;
+          for (let k = 0; k < growArr.length; k++) growArr[k] = 1;
+          onEntryDone(true); updateCursor();
+        }, null, growEnd);
+        entryAnim = tl;
+      }
+
+      el.addEventListener('wheel',        onWheel,       { passive: false });
+      el.addEventListener('pointerdown',  onPointerDown);
+      el.addEventListener('pointermove',  onPointerMove);
+      el.addEventListener('pointerup',    onPointerUp);
+      el.addEventListener('pointercancel',onPointerUp);
+      el.addEventListener('pointerenter', onEnter);
+      el.addEventListener('pointerleave', onLeave);
+      el.addEventListener('click',        onClick);
+
+      let raf;
+      function tick() {
+        if (!dragging) {
+          target += velocity; velocity *= CONFIG.FRICTION;
+          if (Math.abs(velocity) < 0.05) velocity = 0;
+          if (CONFIG.SNAP && !snapped && !focusState.active && performance.now() - lastInput > CONFIG.SNAP_IDLE_MS) {
+            target = centerForIndex(nearestIndex(scroll)); snapped = true;
+          }
+        }
+        const follow = dragging && dragPointerType !== 'mouse' ? INTERACT.TOUCH_EASE
+          : snapped && !pendingFocus ? CONFIG.SNAP_EASE : CONFIG.EASE;
+        scroll += (target - scroll) * follow;
+
+        const ci = centerIndex(scroll);
+        if (ci !== lastCenter) { lastCenter = ci; onActiveChange(ci); }
+
+        const rawSpeed = scroll - prevScroll; prevScroll = scroll;
+        const norm = Math.min(1, Math.abs(rawSpeed) / Math.max(1, CONFIG.SHRINK_MAX));
+        const k = norm > scrollEnergy ? CONFIG.SHRINK_ATTACK : CONFIG.SHRINK_DECAY;
+        scrollEnergy += (norm - scrollEnergy) * k;
+
+        layout(); refreshHover();
+
+        if (pendingFocus && !focusState.active) {
+          if (Math.abs(target - scroll) < 0.5) {
+            const pf = pendingFocus; pendingFocus = null;
+            if (centeredPanel && centeredPanel.srcIndex === pf.srcIndex) openFocus();
+          }
+        }
+
+        renderer.render(scene, camera);
+        raf = requestAnimationFrame(tick);
+      }
+      tick();
+      if (ENTRY.enabled) playEntry();
+
+      function onResize() {
+        W = mount.clientWidth; H = mount.clientHeight;
+        renderer.setSize(W, H);
+        camera.left = -W/2; camera.right = W/2; camera.top = H/2; camera.bottom = -H/2;
+        camera.updateProjectionMatrix();
+      }
+      window.addEventListener('resize', onResize);
+
+      function destroy() {
+        cancelAnimationFrame(raf);
+        window.removeEventListener('resize', onResize);
+        el.removeEventListener('wheel',        onWheel);
+        el.removeEventListener('pointerdown',  onPointerDown);
+        el.removeEventListener('pointermove',  onPointerMove);
+        el.removeEventListener('pointerup',    onPointerUp);
+        el.removeEventListener('pointercancel',onPointerUp);
+        el.removeEventListener('pointerenter', onEnter);
+        el.removeEventListener('pointerleave', onLeave);
+        el.removeEventListener('click',        onClick);
+        if (focusState.anim) focusState.anim.kill();
+        if (entryAnim) entryAnim.kill();
+        renderer.dispose();
+        pool.forEach(p => { p.mesh.geometry.dispose(); p.mat.dispose(); });
+        sources.forEach(s => { if (s.tex) s.tex.dispose(); });
+        if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+      }
+      return { closeFocus, replayEntry: playEntry, destroy };
+    }
+
+    // ── Init ────────────────────────────────────────────────────
+    // Intentionally ignore prefers-reduced-motion — full animations always run.
+    gsap.globalTimeline.timeScale(1);
+
+    if (window.innerWidth > 1024) {
+      const mount    = document.getElementById('carousel-mount');
+      const counter  = document.getElementById('carousel-counter');
+      const closeBtn = document.getElementById('carousel-close');
+
+      const carousel = createCarousel(mount, {
+        onActiveChange(i) {
+          counter.textContent = `${String(i + 1).padStart(2, '0')}/${String(PROJECTS.length).padStart(2, '0')}`;
+        },
+        onFocusChange(focused) {
+          closeBtn.style.opacity       = focused ? '1' : '0';
+          closeBtn.style.pointerEvents = focused ? 'auto' : 'none';
+        },
+        onEntryDone(done) {
+          if (done) gsap.to(counter, { autoAlpha: 1, duration: 1.6, ease: 'power2.out' });
+        },
+      });
+
+      closeBtn.addEventListener('click', () => carousel.closeFocus());
+    }
+  </script>
+
+</body>
+</html>
