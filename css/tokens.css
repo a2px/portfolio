@@ -4,6 +4,10 @@
    Load this file before styles.css and case-study.css.
    ============================================================ */
 
+/* PP Editorial Old (trial: free for personal use) */
+@font-face { font-family: 'PP Editorial Old'; src: url('../fonts/PPEditorialOld-Regular.otf') format('opentype'); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'PP Editorial Old'; src: url('../fonts/PPEditorialOld-Italic.otf') format('opentype'); font-weight: 400 700; font-style: italic; font-display: swap; }
+
 :root {
 
   /* ----------------------------------------------------------
@@ -47,7 +51,7 @@
      TYPOGRAPHY — Font families
      ---------------------------------------------------------- */
   --font:                'Lexend', sans-serif;
-  --font-serif:          'Instrument Serif', serif;
+  --font-serif:          'PP Editorial Old', serif;
 
   /* ----------------------------------------------------------
      TYPOGRAPHY — Type scale

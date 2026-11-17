@@ -68,7 +68,7 @@ Load order in HTML `<head>`:
 | Token | Value | Used for |
 |---|---|---|
 | `--font` | `'Lexend', sans-serif` | All body copy, UI labels, buttons |
-| `--font-serif` | `'Instrument Serif', serif` | Display headings, nav logo, footer headings, hero line |
+| `--font-serif` | `'PP Editorial Old', serif` (self-hosted in fonts/) | Display headings, nav logo, footer headings, hero line |
 
 ### Type Scale
 
