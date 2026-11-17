@@ -127,3 +127,8 @@ if (nav) {
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 }
+
+// ── Footer year: always the visitor's current year ───────────
+document.querySelectorAll('.footer__year').forEach(el => {
+  el.textContent = new Date().getFullYear();
+});
