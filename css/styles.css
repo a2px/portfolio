@@ -172,113 +172,51 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 /* ============================================================
    BUTTONS
+   One shape for every button. Primary (default) is solid accent;
+   .btn--secondary is outlined. Both slide in light blue on hover.
    ============================================================ */
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-4) var(--space-8);
-  border-radius: var(--radius-pill);
-  font-family: var(--font);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  transition: all var(--ease);
-  text-decoration: none;
-  border: none;
-}
-.btn--primary {
+  padding: 7px var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: var(--border-1) solid var(--color-accent);
   background: var(--color-accent);
   color: var(--color-white);
+  font-family: var(--font);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  text-decoration: none;
+  transition: color var(--ease-slide);
 }
-.btn--primary:hover {
-  background: var(--color-accent-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 var(--space-2) var(--space-7) var(--color-shadow-accent);
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-light-blue);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--ease-slide-full);
 }
-.btn--primary:focus-visible {
+.btn:hover {
+  color: var(--color-accent);
+}
+.btn:hover::before {
+  transform: scaleX(1);
+}
+.btn:focus-visible {
   outline: var(--border-4) solid var(--color-accent);
   outline-offset: var(--border-4);
 }
-.btn--ghost {
-  background: transparent;
-  color: var(--color-accent);
-  border: var(--border-2) solid var(--color-accent);
-}
-.btn--ghost:hover {
-  background: var(--color-light-blue);
-}
-
-/* Ghost outline + slide-bubble on hover */
-.btn--ghost-slide {
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-  color: var(--color-text);
-  border: var(--border-1) solid var(--color-border);
-  gap: 0;
-  transition: color var(--ease-slide), border-color var(--ease-slide);
-}
-.btn--ghost-slide::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--color-light-blue);
-  border-radius: inherit;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--ease-slide-full);
-}
-.btn--ghost-slide:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-.btn--ghost-slide:hover::before {
-  transform: scaleX(1);
-}
-.btn--ghost-slide:hover .btn--slide__arrow {
-  transform: rotate(45deg);
-}
-
-/* Slide-bubble button */
-.btn--slide {
-  position: relative;
-  overflow: hidden;
-  background: var(--color-accent);
-  color: var(--color-white);
-  border: var(--border-2) solid var(--color-accent);
-  gap: 0;
-  transition: color var(--ease-slide), border-color var(--ease-slide);
-}
-.btn--slide::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--color-light-blue);
-  border-radius: inherit;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--ease-slide-full);
-}
-.btn--slide:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-.btn--slide:hover::before {
-  transform: scaleX(1);
-}
-.btn--slide__text,
-.btn--slide__arrow {
+.btn__label {
   position: relative;
   z-index: 1;
 }
-.btn--slide__arrow {
-  display: inline-flex;
-  align-items: center;
-  margin-left: var(--space-2);
-  transition: transform var(--ease-medium);
-}
-.btn--slide:hover .btn--slide__arrow {
-  transform: rotate(45deg);
+.btn--secondary {
+  background: transparent;
+  color: var(--color-accent);
 }
 
 /* ============================================================
@@ -732,22 +670,8 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   object-position: center center;
 }
 
-.mini-card__link-btn {
-  margin-top: var(--space-3);
-  padding: 7px var(--space-sm);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-regular);
-  border-radius: var(--radius-sm);
-  align-self: flex-start;
-}
-
-/* Compact ghost-slide button used in mini-card and experience section */
 .mini-card__link-btn,
 .exp-linkedin-btn {
-  padding: 7px var(--space-sm);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-regular);
-  border-radius: var(--radius-sm);
   align-self: flex-start;
 }
 .mini-card__link-btn { margin-top: var(--space-3); }

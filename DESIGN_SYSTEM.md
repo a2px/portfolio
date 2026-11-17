@@ -20,7 +20,7 @@ Load order in HTML `<head>`:
 |---|---|---|
 | `--color-bg` | `#FCFEF9` | Page background, nav fill, footer background |
 | `--color-off-white` | `#F9FAFC` | Surface cards, stat backgrounds, placeholders, step image boxes |
-| `--color-light-blue` | `#E3E9F9` | Accent-tint hover fill for slide button, ghost button hover |
+| `--color-light-blue` | `#E3E9F9` | Button hover fill (slides in from the left) |
 | `--color-accent` | `#274CAB` | Primary CTA color — buttons, active nav underlines, section labels, links, borders |
 | `--color-accent-dark` | `#1c3a87` | Hover state for accent color (`.hl-navy`, button hover) |
 | `--color-green` | `#5a7a1a` | Green tag text (`tag--green`) |
@@ -49,7 +49,7 @@ Load order in HTML `<head>`:
 | Token | Value | Used for |
 |---|---|---|
 | `--color-nav-bg` | `rgba(252, 254, 249, 0.92)` | Nav bar backdrop (frosted glass effect) |
-| `--color-shadow-accent` | `rgba(39, 76, 171, 0.25)` | Primary button hover shadow |
+| `--color-shadow-accent` | `rgba(39, 76, 171, 0.25)` | Unused since buttons were consolidated |
 | `--color-shadow-xs` | `rgba(0, 0, 0, 0.02)` | Hairline / subtle box shadow on tags and cards |
 | `--color-shadow-sm` | `rgba(0, 0, 0, 0.06)` | Card hover / project-nav hover shadow |
 | `--color-shadow-md` | `rgba(0, 0, 0, 0.08)` | Mobile nav dropdown shadow |
@@ -78,7 +78,7 @@ All sizes are exact pixel matches to the values used in the original CSS. No val
 |---|---|---|
 | `--text-xs` | `12px` | Tags, section labels (`section-label`), card arrow text, scroll hint, meta labels |
 | `--text-2xs` | `13px` | Case study sidenav links, project-nav label, img placeholder label |
-| `--text-sm` | `14px` | Buttons, card description floor, mini-card button text, experience role (mobile) |
+| `--text-sm` | `14px` | Buttons, card description floor, experience role (mobile) |
 | `--text-base` | `16px` | Body text, meta values, card description ceiling |
 | `--text-md` | `18px` | Hero aside/statement/sub, case study section paragraphs, list items, page-hero subtitle |
 | `--text-lg` | `22px` | Projects section heading, case study h3 |
@@ -145,13 +145,13 @@ Based on a 4 px grid. Named tokens map to the numbered scale for easy cross-refe
 | `--space-1h` | `6px` | — | Nav toggle padding; tags gap; card__tags gap |
 | `--space-2` | `8px` | `--space-xs` | Toggle gap, tag y-padding, card arrow gap |
 | `--space-3` | `12px` | — | iter-phones gap, image figcaption margin, list item spacing |
-| `--space-4` | `14px` | — | Button padding-y, page-loader gap |
+| `--space-4` | `14px` | — | Page-loader gap |
 | `--space-5` | `16px` | `--space-sm` | Standard UI gaps, mini-cards grid gap, card tags gap |
 | `--space-5h` | `18px` | — | cs-cards grid gap |
 | `--space-5q` | `22px` | — | cs-list li left padding (to clear the em-dash bullet) |
 | `--space-6` | `20px` | — | Card body padding-top, step-img-box padding, cs-project-nav info padding |
 | `--space-7` | `24px` | `--space-md` | Container px default, cs-split gap, cs-step padding, cs-hero tags gap |
-| `--space-8` | `28px` | — | Button padding-x, work-grid gap, footer star image size |
+| `--space-8` | `28px` | — | Work-grid gap, footer star image size |
 | `--space-9` | `32px` | — | Footer col margin (at 1300px), scroll-hint line width |
 | `--space-10` | `36px` | — | Page loader star size |
 | `--space-11` | `40px` | — | Nav links gap, footer section gaps, footer divider→col margin |
@@ -194,9 +194,9 @@ Based on a 4 px grid. Named tokens map to the numbered scale for easy cross-refe
 | Token | Value | Used for |
 |---|---|---|
 | `--border-1` | `1px` | Standard card, nav, and element borders |
-| `--border-2` | `1.5px` | Ghost button border, slide-button border, wide-flex step box border |
+| `--border-2` | `1.5px` | Wide-flex step box border |
 | `--border-3` | `2px` | Nav underline, heading underlines, focus ring |
-| `--border-4` | `3px` | Pull-quote left border, primary button focus ring |
+| `--border-4` | `3px` | Pull-quote left border, button focus ring |
 
 ---
 
@@ -206,12 +206,12 @@ Based on a 4 px grid. Named tokens map to the numbered scale for easy cross-refe
 |---|---|---|
 | `--radius-2xs` | `2px` | Link underlines (nav, footer), toggle hamburger bars |
 | `--radius-xs` | `4px` | Focus-visible global style |
-| `--radius-sm` | `8px` | Mini-card button, mini-card thumb (mobile), step-img-box image |
+| `--radius-sm` | `8px` | Buttons (`.btn`), mini-card thumb (mobile), step-img-box image |
 | `--radius-xl` | `10px` | Mini-card thumbnail (desktop) |
 | `--radius-card` | `12px` | Project card thumbnail, card focus ring |
 | `--radius-md` | `16px` | Standard component radius — mini-cards, meta items, stat boxes, cs-img-frame, cs-media |
 | `--radius-lg` | `24px` | Large containers — cs-cover, cs-gif-container, cs-style-phones, cs-features-wrap |
-| `--radius-pill` | `100px` | Buttons (`.btn`), tags (`.tag`) |
+| `--radius-pill` | `100px` | Tags (`.tag`) |
 
 **Note:** `--radius-xl` (10px) sits between `--radius-sm` and `--radius-md` and is used only for mini-card thumbnails at desktop size.
 
@@ -223,12 +223,12 @@ Based on a 4 px grid. Named tokens map to the numbered scale for easy cross-refe
 |---|---|---|
 | `--ease` | `0.22s ease` | Default micro-interaction — nav links, footer links, card arrows, back link |
 | `--ease-fast` | `0.2s ease` | Hamburger toggle spans, sidenav link transitions |
-| `--ease-medium` | `0.3s ease` | Arrow rotation on slide button hover |
+| `--ease-medium` | `0.3s ease` | Unused since button arrows were removed |
 | `--ease-slow` | `0.35s ease` | Page loader fade-in/out |
-| `--ease-slide` | `0.38s ease` | Slide-button color / border-color transition |
+| `--ease-slide` | `0.38s ease` | Button text color transition |
 | `--ease-hover` | `0.4s ease` | Card thumbnail zoom on hover |
 | `--ease-cubic` | `cubic-bezier(0.4, 0, 0.2, 1)` | Easing function only (no duration) |
-| `--ease-slide-full` | `0.38s cubic-bezier(0.4, 0, 0.2, 1)` | Slide-button fill (background scaleX) transition |
+| `--ease-slide-full` | `0.38s cubic-bezier(0.4, 0, 0.2, 1)` | Button fill (background scaleX) transition |
 
 ---
 
@@ -249,6 +249,20 @@ Based on a 4 px grid. Named tokens map to the numbered scale for easy cross-refe
 | `--blur-nav` | `blur(16px)` | Nav bar `backdrop-filter` and `-webkit-backdrop-filter` |
 
 ---
+
+## Buttons
+
+Every button on the site uses `.btn` (in `styles.css`). There are two styles and no arrows.
+
+| Class | At rest | Hover | Use for |
+|---|---|---|---|
+| `.btn` (primary) | `--color-accent` fill, white text, accent border | `--color-light-blue` slides in from the left, text turns accent, accent border stays | The main action: Resume, See it live, LinkedIn |
+| `.btn .btn--secondary` | No fill, accent text, accent border | Same as primary | The second action beside a primary: Email |
+
+- Shape: `--radius-sm` corners, `7px var(--space-sm)` padding, `--text-sm` at `--weight-regular`, `--border-1` border.
+- Markup: `<a class="btn"><span class="btn__label">Label</span></a>`. The label span sits above the sliding fill.
+- Labels are short: Resume, Email, See it live, LinkedIn.
+- Layout helpers (`.mini-card__link-btn`, `.exp-linkedin-btn`, `.about-actions`) only position buttons; they never change how a button looks.
 
 ## Adding New Tokens
 
