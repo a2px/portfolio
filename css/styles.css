@@ -968,6 +968,13 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   margin-bottom: var(--space-md);
 }
 
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
 .about-skills {
   list-style: none;
   padding: 0;
