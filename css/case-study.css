@@ -85,7 +85,7 @@
 }
 
 .cs-hero {
-  padding-top: calc(var(--nav-h) + calc(var(--space-xl) * 0.25));
+  padding-top: calc(var(--nav-h) + var(--space-lg));
   padding-bottom: var(--space-lg);
 }
 
@@ -290,17 +290,6 @@
 .cs-split__right {
   min-width: 0;
 }
-
-.cs-back {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
-  transition: color var(--ease);
-}
-.cs-back:hover { color: var(--color-accent); }
 
 .cs-hero__tags {
   display: flex;
