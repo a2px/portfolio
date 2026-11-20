@@ -28,7 +28,6 @@
      COLORS — Extended / one-off values
      ---------------------------------------------------------- */
   --color-white:         #ffffff;   /* Pure white (cards, meta items) */
-  --color-black:         #000000;   /* Nav logo, hero statement text */
   --color-tag-border:    #EEF0EB;   /* Default tag border */
   --color-tag-green-bg:  #EAF4D4;   /* Green tag background */
   --color-tag-red-bg:    #FAEDED;   /* Red tag background */
@@ -159,12 +158,10 @@
      ---------------------------------------------------------- */
   --radius-2xs: 2px;    /* Focus-visible border-radius, underline borders */
   --radius-xs:  4px;    /* Focus-visible border-radius */
-  --radius-sm:  8px;    /* Small elements, mini-card btn, mini-card thumb mobile */
-  --radius-md:  16px;   /* Standard cards, cs-img-frame, cs-step-img-box */
+  --radius-sm:  8px;    /* Buttons, logo tiles, placeholders, small elements */
+  --radius-md:  16px;   /* Cards, images, video, card thumbs */
   --radius-lg:  24px;   /* Large containers, cs-cover, cs-gif-container */
-  --radius-xl:  10px;   /* Mini-card thumb */
-  --radius-card: 12px;  /* Card thumb, card focus-within */
-  --radius-pill: 100px; /* Buttons, tags */
+  --radius-pill: 100px; /* Tags */
 
   /* ----------------------------------------------------------
      LAYOUT
@@ -193,7 +190,6 @@
   /* ----------------------------------------------------------
      CARD VIDEO MEDIA
      ---------------------------------------------------------- */
-  --radius-video:       10px;
   --video-inset:        9%;   /* padding on each side → video is ~82% wide */
   --video-inset-mobile: 5%;   /* padding on each side → video is ~90% wide on ≤640px */
   --shadow-video:       0 6px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);

@@ -34,7 +34,6 @@ Load order in HTML `<head>`:
 | Token | Value | Used for |
 |---|---|---|
 | `--color-white` | `#ffffff` | Pure white — card backgrounds, meta items, project nav cards |
-| `--color-black` | `#000000` | Nav logo color, hero statement text |
 | `--color-tag-border` | `#EEF0EB` | Default tag border color |
 | `--color-tag-green-bg` | `#EAF4D4` | Green tag (`tag--green`) background |
 | `--color-tag-red-bg` | `#FAEDED` | Red tag (`tag--red`) background |
@@ -130,7 +129,7 @@ All sizes are exact pixel matches to the values used in the original CSS. No val
 | `--tracking-label` | `0.05em` | Scroll hint text |
 | `--tracking-caps` | `0.06em` | Projects heading uppercase |
 | `--tracking-caps-md` | `0.08em` | Meta labels, project-nav label, sidenav link |
-| `--tracking-caps-lg` | `0.1em` | Section label, Lennar/Mark Spain eyebrow h2 |
+| `--tracking-caps-lg` | `0.1em` | (unused; all small caps labels use `--tracking-caps-md`) |
 
 ---
 
@@ -206,14 +205,12 @@ Based on a 4 px grid. Named tokens map to the numbered scale for easy cross-refe
 |---|---|---|
 | `--radius-2xs` | `2px` | Link underlines (nav, footer), toggle hamburger bars |
 | `--radius-xs` | `4px` | Focus-visible global style |
-| `--radius-sm` | `8px` | Buttons (`.btn`), mini-card thumb (mobile), step-img-box image |
-| `--radius-xl` | `10px` | Mini-card thumbnail (desktop) |
-| `--radius-card` | `12px` | Project card thumbnail, card focus ring |
-| `--radius-md` | `16px` | Standard component radius — mini-cards, meta items, stat boxes, cs-img-frame, cs-media |
+| `--radius-sm` | `8px` | Small things — buttons (`.btn`), hero logo tiles, placeholders |
+| `--radius-md` | `16px` | Cards, images and video — project card thumbs, card videos, mini-cards, meta items, stat boxes, cs-img-frame, cs-media |
 | `--radius-lg` | `24px` | Large containers — cs-cover, cs-gif-container, cs-style-phones, cs-features-wrap |
 | `--radius-pill` | `100px` | Tags (`.tag`) |
 
-**Note:** `--radius-xl` (10px) sits between `--radius-sm` and `--radius-md` and is used only for mini-card thumbnails at desktop size.
+**Rule:** only three corner sizes (8 / 16 / 24) plus the pill for tags. Don't add in-between radii.
 
 ---
 
@@ -264,6 +261,29 @@ Every button on the site uses `.btn` (in `styles.css`). There are two styles and
 - Labels are short: Resume, Email, See it live, LinkedIn.
 - Layout helpers (`.mini-card__link-btn`, `.exp-linkedin-btn`, `.about-actions`) only position buttons; they never change how a button looks.
 
+## Case Study Headings
+
+Every case study section uses the same pattern:
+
+```html
+<section class="cs-section" id="research">
+  <h2>Research</h2>                       <!-- small caps label, matches the side menu -->
+  <h3>Analyzing Websites from ...</h3>    <!-- 32px statement heading -->
+  ...
+  <h3 class="cs-h3-sub">Subheading</h3>   <!-- 22px medium -->
+</section>
+```
+
+A section with no statement heading (Capstone) keeps the `h2` as the large heading. Give extra `h3`s in a section the `cs-h3-sub` class so they stay subheadings.
+
+## Small Caps Labels
+
+One style for every label (meta labels, section labels, Previous / Next): `--text-xs`, `--weight-medium`, `--tracking-caps-md`, uppercase, `--color-text-muted`.
+
+## Text Black
+
+All text uses `--color-text` (#0D0D0D), including the logo and hero line. There is no pure black.
+
 ## Adding New Tokens
 
 1. Define the new custom property in `css/tokens.css` under the appropriate section.
@@ -277,10 +297,9 @@ The spacing and typography scales were built by mapping every existing hardcoded
 
 - `--space-4: 14px` (button padding-y) was 14px in the original, not rounded to 12px or 16px.
 - `--text-serif-xl: 41px` (about-label) was 41px in the original, not rounded to 40px.
-- `--text-2xs: 13px` (sidenav, project-nav label) was 13px in the original, not rounded to 12px or 14px.
+- `--text-2xs: 13px` (sidenav) was 13px in the original, not rounded to 12px or 14px.
 - `--text-mini-title: 17px` (mini-card title) was 17px in the original, not rounded to 16px or 18px.
 - `--text-mini-desc: 15px` (mini-card desc) was 15px in the original, not rounded to 14px or 16px.
-- `--radius-xl: 10px` (mini-card thumb) was 10px in the original, not rounded to 8px or 12px.
 - `--space-17: 84px` (projects grid gap) was 84px in the original, not rounded to 80px.
 - `--space-5h: 18px` (cs-cards gap) was 18px in the original, not rounded to 16px or 20px.
 - `--space-5q: 22px` (cs-list indent) was 22px in the original, not rounded to 24px.

@@ -111,7 +111,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   font-family: var(--font-serif);
   font-weight: var(--weight-regular);
   letter-spacing: var(--tracking-normal);
-  color: var(--color-black);
+  color: var(--color-text);
   transition: opacity var(--ease);
 }
 .nav__logo:hover { opacity: 0.75; }
@@ -243,9 +243,9 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .section-label {
   font-size: var(--text-xs);
   font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-caps-lg);
+  letter-spacing: var(--tracking-caps-md);
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-sm);
 }
 .section-title {
@@ -346,7 +346,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .hero__statement {
   font-size: var(--text-md);
   font-weight: var(--weight-regular);
-  color: var(--color-black);
+  color: var(--color-text);
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-normal);
   max-width: 100%;
@@ -393,7 +393,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   height: 72px;
   background: var(--color-white);
   border: var(--border-1) solid var(--color-tag-border);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -473,7 +473,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .card:focus-within {
   outline: var(--border-4) solid var(--color-accent);
   outline-offset: var(--border-3);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-md);
 }
 
 .card__link {
@@ -489,7 +489,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-md);
 }
 .card__thumb img {
   position: absolute;
@@ -518,7 +518,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   background: var(--color-surface);
 }
 .card__coming-soon {
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-caps-md);
   text-transform: uppercase;
@@ -889,8 +889,9 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   align-items: center;
   gap: var(--space-3);
   font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
   color: var(--color-text-muted);
-  letter-spacing: var(--tracking-label);
+  letter-spacing: var(--tracking-caps-md);
   text-transform: uppercase;
 }
 .scroll-hint__line {
@@ -1051,7 +1052,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-video);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-video);
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
   transform: scale(1);

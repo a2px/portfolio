@@ -66,7 +66,7 @@
 }
 .cs-project-nav__next .cs-project-nav__info { align-items: flex-start; text-align: left; }
 .cs-project-nav__label {
-  font-size: var(--text-2xs);
+  font-size: var(--text-xs);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-caps-md);
   text-transform: uppercase;
@@ -474,17 +474,22 @@
   margin-bottom: var(--space-sm);
 }
 
-/* Lennar + Mark Spain page: eyebrow h2 + large h3 heading pattern */
+/* Section heading pattern (all case studies): when a section name is
+   followed by a statement heading, the name becomes a small caps eyebrow
+   and the statement becomes the large heading. A section name with no
+   statement after it (Capstone) stays a large heading. */
+.cs-section h2:has(+ h3:not(.cs-h3-sub)),
 .lennar-page .cs-section h2,
 .markspain-page .cs-section h2 {
   font-size: var(--text-xs);
   font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-caps-lg);
+  letter-spacing: var(--tracking-caps-md);
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-3);
 }
 
+.cs-section h2 + h3:not(.cs-h3-sub),
 .lennar-page .cs-section h3,
 .markspain-page .cs-section h3 {
   font-size: var(--text-xl);
@@ -498,6 +503,7 @@
 /* Sub-headings that should stay small even on lennar-page */
 .lennar-page .cs-section h3.cs-h3-sub,
 .markspain-page .cs-section h3.cs-h3-sub,
+.cs-section h3.cs-h3-sub,
 .cs-h3-sub {
   font-size: var(--text-lg);
   font-weight: var(--weight-medium);
@@ -511,6 +517,7 @@
 .lennar-page .cs-step h3,
 .markspain-page .cs-step h3 {
   font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-snug);
   line-height: var(--leading-normal);
   margin-bottom: var(--space-2);
